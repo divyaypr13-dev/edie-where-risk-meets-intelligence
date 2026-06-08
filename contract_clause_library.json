@@ -1,0 +1,231 @@
+
+{
+  "clauses": [
+    {
+      "clause_id": "CL001",
+      "clause_name": "Limitation of Liability",
+      "category": "Risk Allocation",
+      "risk_weight": 10,
+      "contract_types": ["Software License", "Service Agreement", "Vendor Contract", "Procurement"],
+      "keywords": [
+        "limitation of liability",
+        "liability",
+        "maximum liability",
+        "liability cap",
+        "limitation of damages",
+        "aggregate liability"
+      ],
+      "red_flags": [
+        "unlimited liability",
+        "without limitation",
+        "any and all damages",
+        "consequential damages",
+        "indirect damages"
+      ],
+      "recommended_text": "Neither party's aggregate liability arising out of or relating to this Agreement shall exceed the total fees paid or payable by Customer to Vendor during the 12 months preceding the claim.",
+      "related_laws": ["Contract Act 1872"],
+      "minimum_acceptable_cap": "Fees paid in last 12 months"
+    },
+    {
+      "clause_id": "CL002",
+      "clause_name": "Indemnification",
+      "category": "Risk Allocation",
+      "risk_weight": 9,
+      "contract_types": ["Service Agreement", "Vendor Contract", "Licensing Agreement", "Partnership Agreement"],
+      "keywords": [
+        "indemnify",
+        "indemnification",
+        "hold harmless",
+        "defend",
+        "indemnity"
+      ],
+      "red_flags": [
+        "indemnify without limit",
+        "unlimited indemnity",
+        "all losses",
+        "all damages"
+      ],
+      "recommended_text": "Vendor shall indemnify Customer against third party claims alleging infringement of intellectual property rights, provided Customer promptly notifies Vendor and grants Vendor control of defense.",
+      "related_laws": []
+    },
+    {
+      "clause_id": "CL003",
+      "clause_name": "Confidentiality",
+      "category": "IP Protection",
+      "risk_weight": 8,
+      "contract_types": ["All Contract Types"],
+      "keywords": [
+        "confidential information",
+        "confidentiality",
+        "non-disclosure",
+        "trade secrets",
+        "proprietary information"
+      ],
+      "red_flags": [
+        "no confidentiality",
+        "unlimited disclosure",
+        "no return obligation"
+      ],
+      "recommended_text": "Receiving Party shall protect Confidential Information using reasonable care, use only for permitted purposes, and return or destroy upon termination.",
+      "related_laws": ["DPDP 2023"]
+    },
+    {
+      "clause_id": "CL004",
+      "clause_name": "Data Protection",
+      "category": "Compliance",
+      "risk_weight": 10,
+      "contract_types": ["Service Agreement", "Vendor Contract", "Outsourcing Contract"],
+      "keywords": [
+        "personal data",
+        "data protection",
+        "privacy",
+        "data breach",
+        "data processing",
+        "sensitive information"
+      ],
+      "red_flags": [
+        "no data protection",
+        "unrestricted data use",
+        "no breach notification"
+      ],
+      "recommended_text": "Processor shall implement appropriate technical and organizational measures to protect Personal Data, notify Controller of any data breach within 48 hours, and process data only on documented instructions.",
+      "related_laws": ["DPDP 2023"]
+    },
+    {
+      "clause_id": "CL005",
+      "clause_name": "Intellectual Property Rights",
+      "category": "IP Protection",
+      "risk_weight": 10,
+      "contract_types": ["Licensing Agreement", "Software License", "Technology License", "Development Agreement"],
+      "keywords": [
+        "intellectual property",
+        "copyright",
+        "patent",
+        "trademark",
+        "license",
+        "work made for hire",
+        "ownership"
+      ],
+      "red_flags": [
+        "no ip ownership defined",
+        "assignment of background ip",
+        "unlimited license to customer ip"
+      ],
+      "recommended_text": "Vendor retains ownership of pre-existing IP. Customer owns all deliverables created specifically for Customer. Vendor grants Customer non-exclusive, perpetual license to use deliverables.",
+      "related_laws": ["Copyright Act 1957", "Patents Act 1970"]
+    },
+    {
+      "clause_id": "CL006",
+      "clause_name": "Warranty",
+      "category": "Quality Assurance",
+      "risk_weight": 7,
+      "contract_types": ["Software License", "Service Agreement", "Sales Contract", "Procurement"],
+      "keywords": [
+        "warranty",
+        "warrant",
+        "represent",
+        "merchantability",
+        "fitness for purpose",
+        "as is"
+      ],
+      "red_flags": [
+        "as is",
+        "without warranty",
+        "no warranty",
+        "with all faults"
+      ],
+      "recommended_text": "Vendor warrants that for 90 days following delivery, the Software will substantially conform to the applicable documentation.",
+      "related_laws": ["Sale of Goods Act 1930"]
+    },
+    {
+      "clause_id": "CL007",
+      "clause_name": "Payment Terms",
+      "category": "Financial",
+      "risk_weight": 7,
+      "contract_types": ["All Contract Types"],
+      "keywords": [
+        "payment",
+        "invoice",
+        "due date",
+        "late payment",
+        "interest",
+        "fees",
+        "rate"
+      ],
+      "red_flags": [
+        "no payment terms",
+        "unlimited payment period",
+        "no late fee",
+        "interest not specified"
+      ],
+      "recommended_text": "Invoices shall be paid within 30 days of receipt. Late payments shall bear interest at 1.5% per month or the maximum legal rate, whichever is lower.",
+      "related_laws": ["MSMED 2006 for MSME suppliers"]
+    },
+    {
+      "clause_id": "CL008",
+      "clause_name": "Term and Termination",
+      "category": "Governance",
+      "risk_weight": 8,
+      "contract_types": ["All Contract Types"],
+      "keywords": [
+        "term",
+        "termination",
+        "effective date",
+        "expiration",
+        "renewal",
+        "notice period"
+      ],
+      "red_flags": [
+        "automatic renewal without notice",
+        "no termination for cause",
+        "unilateral termination without cause"
+      ],
+      "recommended_text": "This Agreement shall commence on Effective Date and continue for 1 year, automatically renewing unless either party provides 30 days written notice. Either party may terminate for material breach with 30 days cure period.",
+      "related_laws": []
+    },
+    {
+      "clause_id": "CL009",
+      "clause_name": "Governing Law and Dispute Resolution",
+      "category": "Legal",
+      "risk_weight": 8,
+      "contract_types": ["All Contract Types"],
+      "keywords": [
+        "governing law",
+        "jurisdiction",
+        "arbitration",
+        "dispute resolution",
+        "venue",
+        "choice of law"
+      ],
+      "red_flags": [
+        "foreign governing law",
+        "distant arbitration venue",
+        "no dispute resolution clause"
+      ],
+      "recommended_text": "This Agreement shall be governed by laws of India. Any dispute shall be resolved by arbitration in [City] in accordance with [Rules].",
+      "related_laws": ["Arbitration and Conciliation Act 1996"]
+    },
+    {
+      "clause_id": "CL010",
+      "clause_name": "Service Level Agreement (SLA)",
+      "category": "Service Quality",
+      "risk_weight": 7,
+      "contract_types": ["Service Agreement", "Outsourcing Contract", "IT Support Agreement"],
+      "keywords": [
+        "service level",
+        "sla",
+        "uptime",
+        "response time",
+        "resolution time",
+        "availability"
+      ],
+      "red_flags": [
+        "no sla",
+        "unrealistic sla",
+        "no remedies for sla breach"
+      ],
+      "recommended_text": "Service Provider shall maintain 99.9% uptime. Response times shall be 1 hour for critical issues. Service credits of 5% of monthly fees apply for each hour of downtime beyond SLA.",
+      "related_laws": []
+    }
+  ]
+}

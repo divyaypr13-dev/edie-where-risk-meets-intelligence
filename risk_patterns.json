@@ -1,0 +1,203 @@
+
+{
+  "risk_patterns": [
+    {
+      "pattern_id": "RISK001",
+      "pattern_name": "Unlimited Liability",
+      "severity": "Critical",
+      "risk_increase": 35,
+      "keywords": [
+        "unlimited liability",
+        "without limitation",
+        "any and all damages",
+        "all losses",
+        "any liability",
+        "unlimited extent"
+      ],
+      "detection_type": "keyword",
+      "business_impact": "Unlimited financial exposure - company could face bankruptcy from a single claim",
+      "legal_impact": "Potential unlimited damages awarded by court",
+      "recommended_fix": "Add liability cap limiting to fees paid in preceding 12 months or a fixed monetary amount",
+      "sample_clause": "Liability shall not exceed fees paid in previous 12 months or Rs. 10,00,000, whichever is lower."
+    },
+    {
+      "pattern_id": "RISK002",
+      "pattern_name": "MSME Delayed Payment Violation",
+      "severity": "Critical",
+      "risk_increase": 40,
+      "keywords": [
+        "90 days",
+        "60 days",
+        "net 60",
+        "net 90",
+        "payment beyond 45 days",
+        "payment terms"
+      ],
+      "detection_type": "keyword_with_value",
+      "business_impact": "Interest at three times bank rate + compound interest with monthly rests - up to 30%+ effective rate",
+      "legal_impact": "Statutory liability irrespective of contract terms - no waiver possible",
+      "recommended_fix": "Change payment terms to 30 days or less from date of acceptance/invoice",
+      "sample_clause": "Payment shall be made within 30 days of receipt of correct invoice."
+    },
+    {
+      "pattern_id": "RISK003",
+      "pattern_name": "No Data Protection Compliance",
+      "severity": "High",
+      "risk_increase": 30,
+      "keywords": [],
+      "detection_type": "absence",
+      "required_keywords": ["personal data", "data protection", "privacy", "data breach", "confidential information"],
+      "business_impact": "Penalties up to Rs. 250 Crore under DPDP Act, reputational damage",
+      "legal_impact": "Regulatory action, class action lawsuits from affected individuals",
+      "recommended_fix": "Add comprehensive data protection clause with breach notification, security measures, and data processing restrictions",
+      "sample_clause": "Both parties shall comply with applicable data protection laws. Processor shall implement security measures..."
+    },
+    {
+      "pattern_id": "RISK004",
+      "pattern_name": "No TDS Compliance Clause",
+      "severity": "High",
+      "risk_increase": 25,
+      "keywords": [],
+      "detection_type": "absence",
+      "required_keywords": ["tds", "tax deduction", "withholding", "section 194"],
+      "business_impact": "Disallowance of expense (30% not deductible), interest at 1% per month, penalty equal to tax amount",
+      "legal_impact": "Prosecution with imprisonment up to 7 years, deemed assessee in default",
+      "recommended_fix": "Add clause requiring TDS deduction as per applicable rates and issuance of TDS certificate",
+      "sample_clause": "Customer shall deduct tax at source as required under Income Tax Act, 1961. Vendor shall provide PAN and TDS certificate."
+    },
+    {
+      "pattern_id": "RISK005",
+      "pattern_name": "Foreign Governing Law",
+      "severity": "High",
+      "risk_increase": 20,
+      "keywords": [
+        "governed by laws of",
+        "laws of [foreign country]",
+        "new york law",
+        "california law",
+        "england and wales",
+        "singapore law"
+      ],
+      "detection_type": "keyword",
+      "business_impact": "Higher legal costs (Rs. 10-50 lakhs for foreign litigation), difficulty enforcing rights",
+      "legal_impact": "Need to hire foreign counsel, risk of unfamiliar legal principles",
+      "recommended_fix": "Change governing law to India, preferably with arbitration in Indian city",
+      "sample_clause": "This Agreement shall be governed by laws of India. Any dispute shall be resolved by arbitration in New Delhi."
+    },
+    {
+      "pattern_id": "RISK006",
+      "pattern_name": "Unlimited Indemnity",
+      "severity": "High",
+      "risk_increase": 30,
+      "keywords": [
+        "indemnify",
+        "hold harmless",
+        "defend",
+        "all losses",
+        "any damages",
+        "without limit"
+      ],
+      "detection_type": "keyword",
+      "business_impact": "Potential liability far exceeding contract value",
+      "legal_impact": "Uncapped indemnity obligations",
+      "recommended_fix": "Cap indemnity obligation at fees paid or fixed amount, limit to third party claims, add procedural requirements",
+      "sample_clause": "Indemnity obligation is limited to direct damages and capped at fees paid in preceding 12 months."
+    },
+    {
+      "pattern_id": "RISK007",
+      "pattern_name": "No Warranty / As Is",
+      "severity": "Medium",
+      "risk_increase": 15,
+      "keywords": [
+        "as is",
+        "with all faults",
+        "without warranty",
+        "no warranty",
+        "as available",
+        "disclaims all warranties"
+      ],
+      "detection_type": "keyword",
+      "business_impact": "No recourse if software/services are defective",
+      "legal_impact": "Cannot claim damages for defective products/services",
+      "recommended_fix": "Add limited warranty for a reasonable period (30-90 days) that software conforms to documentation",
+      "sample_clause": "Vendor warrants that for 90 days from delivery, the Services will conform to the specifications in all material respects."
+    },
+    {
+      "pattern_id": "RISK008",
+      "pattern_name": "Automatic Renewal with Short Notice",
+      "severity": "Medium",
+      "risk_increase": 15,
+      "keywords": [
+        "automatically renew",
+        "auto-renewal",
+        "automatic extension",
+        "unless either party gives notice"
+      ],
+      "detection_type": "keyword",
+      "business_impact": "Unintentional contract extension, budget overruns",
+      "legal_impact": "Locked into unfavorable terms",
+      "recommended_fix": "Change to explicit renewal with 60+ days notice, or remove auto-renewal",
+      "sample_clause": "This Agreement may be renewed by mutual written agreement at least 60 days before expiry."
+    },
+    {
+      "pattern_id": "RISK009",
+      "pattern_name": "No Audit Rights",
+      "severity": "Medium",
+      "risk_increase": 10,
+      "keywords": [],
+      "detection_type": "absence",
+      "required_keywords": ["audit", "inspect", "verify", "books and records"],
+      "business_impact": "Cannot verify vendor compliance with SLAs, data protection, or billing accuracy",
+      "legal_impact": "No evidence for disputes",
+      "recommended_fix": "Add annual audit right at customer's expense, with more frequent audits if issues found",
+      "sample_clause": "Customer may audit Vendor's compliance annually upon 30 days notice."
+    },
+    {
+      "pattern_id": "RISK010",
+      "pattern_name": "No Liability for Consequential Damages Exception",
+      "severity": "Medium",
+      "risk_increase": 10,
+      "keywords": [
+        "consequential damages",
+        "indirect damages",
+        "lost profits",
+        "loss of data"
+      ],
+      "detection_type": "keyword",
+      "business_impact": "Cannot recover for business interruption, lost revenue, data loss",
+      "legal_impact": "Typical but important to understand - ensure exceptions for IP infringement, breach of confidentiality",
+      "recommended_fix": "Add exceptions for breach of confidentiality, IP infringement, and non-payment",
+      "sample_clause": "Consequential damages exclusion shall not apply to claims arising from breach of confidentiality, IP infringement, or non-payment."
+    },
+    {
+      "pattern_id": "RISK011",
+      "pattern_name": "Assignment without Consent",
+      "severity": "Medium",
+      "risk_increase": 15,
+      "keywords": [
+        "assign",
+        "assignment",
+        "without prior written consent",
+        "unreasonably withheld"
+      ],
+      "detection_type": "keyword",
+      "business_impact": "Cannot assign to affiliate or acquirer without permission",
+      "legal_impact": "Contract may not transfer in M&A transaction",
+      "recommended_fix": "Add exception for assignment to affiliates or in acquisition without consent",
+      "sample_clause": "Either party may assign to an affiliate or successor in merger without consent, with written notice."
+    },
+    {
+      "pattern_id": "RISK012",
+      "pattern_name": "No IP Ownership for Custom Work",
+      "severity": "Critical",
+      "risk_increase": 35,
+      "keywords": [],
+      "detection_type": "absence",
+      "required_keywords": ["ownership", "intellectual property", "work made for hire", "assign", "deliverables"],
+      "business_impact": "Vendor may own custom-developed IP, license can be terminated, vendor could sell to competitors",
+      "legal_impact": "Disputes over IP ownership, litigation risks",
+      "recommended_fix": "Add clause assigning all deliverables and IP created for Customer to Customer",
+      "sample_clause": "All deliverables created specifically for Customer shall be works made for hire owned by Customer. Vendor assigns all rights therein."
+    }
+  ]
+}

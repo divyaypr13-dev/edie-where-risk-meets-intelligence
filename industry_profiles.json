@@ -1,0 +1,186 @@
+
+{
+  "industries": [
+    {
+      "industry": "Banking",
+      "industry_code": "BANK",
+      "description": "Banking and financial services institutions",
+      "risk_multiplier": 1.5,
+      "required_regulations": [
+        "RBI Guidelines",
+        "Banking Regulation Act",
+        "DPDP 2023",
+        "ISO27001",
+        "IT Act 2000",
+        "PMLA 2002"
+      ],
+      "critical_clauses": [
+        "Data Protection",
+        "Confidentiality",
+        "Audit Rights",
+        "Regulatory Compliance",
+        "Indemnification",
+        "Business Continuity"
+      ],
+      "sample_contracts": ["Loan Agreements", "Credit Facilities", "Outsourcing Contracts"],
+      "regulatory_authorities": ["RBI", "SEBI", "IBBI", "CERT-In"]
+    },
+    {
+      "industry": "Healthcare",
+      "industry_code": "HEALTH",
+      "description": "Hospitals, clinics, pharmaceutical companies, healthcare providers",
+      "risk_multiplier": 1.4,
+      "required_regulations": [
+        "Clinical Establishments Act",
+        "DPDP 2023",
+        "Medical Council Guidelines",
+        "ISO27001",
+        "Drugs and Cosmetics Act"
+      ],
+      "critical_clauses": [
+        "Patient Data Protection",
+        "Medical Record Retention",
+        "Confidentiality",
+        "Regulatory Compliance",
+        "Emergency Access"
+      ],
+      "sample_contracts": ["Service Agreements", "Equipment Procurement", "Telemedicine Agreements"],
+      "regulatory_authorities": ["MoHFW", "NABH", "State Medical Councils", "CERT-In"]
+    },
+    {
+      "industry": "Information Technology",
+      "industry_code": "IT",
+      "description": "Software companies, IT services, SaaS providers",
+      "risk_multiplier": 1.3,
+      "required_regulations": [
+        "IT Act 2000",
+        "DPDP 2023",
+        "ISO27001",
+        "Software Licensing Laws",
+        "Copyright Act"
+      ],
+      "critical_clauses": [
+        "IP Ownership",
+        "License Terms",
+        "Data Protection",
+        "Source Code Escrow",
+        "SLA Requirements",
+        "Confidentiality"
+      ],
+      "sample_contracts": ["Software License", "SaaS Agreement", "IT Services", "NDA", "Maintenance Contract"],
+      "regulatory_authorities": ["MeitY", "CERT-In", "DPIIT"]
+    },
+    {
+      "industry": "Manufacturing",
+      "industry_code": "MFG",
+      "description": "Industrial manufacturing, production facilities",
+      "risk_multiplier": 1.2,
+      "required_regulations": [
+        "Factories Act",
+        "Industrial Development Act",
+        "MSMED 2006",
+        "Environmental Laws",
+        "ISO Standards"
+      ],
+      "critical_clauses": [
+        "Quality Specifications",
+        "Delivery Terms",
+        "Warranty",
+        "Payment Terms",
+        "Indemnity",
+        "Force Majeure"
+      ],
+      "sample_contracts": ["Procurement Contracts", "Supply Agreements", "Equipment Lease", "Maintenance Contracts"],
+      "regulatory_authorities": ["DIPP", "MSME Ministry", "Pollution Control Boards"]
+    },
+    {
+      "industry": "E-commerce",
+      "industry_code": "ECOMM",
+      "description": "Online retail, marketplace platforms",
+      "risk_multiplier": 1.35,
+      "required_regulations": [
+        "DPDP 2023",
+        "IT Act 2000",
+        "Consumer Protection Act",
+        "Legal Metrology Act",
+        "Payment Gateway Regulations"
+      ],
+      "critical_clauses": [
+        "Customer Data Protection",
+        "Payment Terms",
+        "Delivery Obligations",
+        "Return Policy",
+        "Indemnity",
+        "Jurisdiction"
+      ],
+      "sample_contracts": ["Vendor Agreements", "Service Agreements", "Logistics Contracts", "Payment Gateway Agreements"],
+      "regulatory_authorities": ["MeitY", "Consumer Affairs", "RBI", "CERT-In"]
+    },
+    {
+      "industry": "Telecommunications",
+      "industry_code": "TELECOM",
+      "description": "Telecom service providers, network operators",
+      "risk_multiplier": 1.45,
+      "required_regulations": [
+        "Telecom Regulatory Authority Act",
+        "Indian Telegraph Act",
+        "DPDP 2023",
+        "License Conditions",
+        "IT Act 2000"
+      ],
+      "critical_clauses": [
+        "Service Availability",
+        "Data Retention",
+        "Lawful Interception",
+        "Confidentiality",
+        "Regulatory Compliance"
+      ],
+      "sample_contracts": ["Service Agreements", "Infrastructure Sharing", "Roaming Agreements", "Vendor Contracts"],
+      "regulatory_authorities": ["TRAI", "DoT", "CERT-In"]
+    },
+    {
+      "industry": "Legal Services",
+      "industry_code": "LEGAL",
+      "description": "Law firms, legal service providers",
+      "risk_multiplier": 1.25,
+      "required_regulations": [
+        "Advocates Act",
+        "Bar Council Rules",
+        "DPDP 2023",
+        "Legal Ethics Guidelines"
+      ],
+      "critical_clauses": [
+        "Attorney-Client Privilege",
+        "Confidentiality",
+        "Conflict of Interest",
+        "Fee Structure",
+        "Engagement Scope"
+      ],
+      "sample_contracts": ["Retainer Agreements", "Consulting Contracts", "Outsourcing Agreements"],
+      "regulatory_authorities": ["Bar Council of India", "BCI", "CERT-In"]
+    },
+    {
+      "industry": "Government/PSU",
+      "industry_code": "GOVT",
+      "description": "Government departments, public sector undertakings",
+      "risk_multiplier": 1.6,
+      "required_regulations": [
+        "Public Procurement Rules",
+        "GST",
+        "DPDP 2023",
+        "CVC Guidelines",
+        "DGS&D Terms"
+      ],
+      "critical_clauses": [
+        "Compliance with Tenders",
+        "Government Audit Rights",
+        "Local Content",
+        "Performance Security",
+        "Arbitration",
+        "Bank Guarantee"
+      ],
+      "sample_contracts": ["Procurement Contracts", "Service Agreements", "Works Contracts"],
+      "regulatory_authorities": ["CVC", "CAG", "DGS&D"]
+    }
+  ]
+}

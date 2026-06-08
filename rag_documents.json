@@ -1,0 +1,149 @@
+
+{
+  "documents": [
+    {
+      "id": "RAG001",
+      "source": "DPDP Act 2023",
+      "section": "Chapter II - Obligations of Data Fiduciary",
+      "content": "Data Fiduciary shall obtain valid consent from Data Principal before processing personal data. Consent shall be free, specific, informed, unconditional, and unambiguous with clear affirmative action. Data Fiduciary shall provide notice of data processing including purpose, types of data collected, retention period, and rights available to Data Principal.",
+      "keywords": ["consent", "data fiduciary", "notice", "personal data"],
+      "applicable_contracts": ["Service Agreement", "SaaS Agreement", "Vendor Contract"]
+    },
+    {
+      "id": "RAG002",
+      "source": "DPDP Act 2023",
+      "section": "Chapter V - Data Breach Notification",
+      "content": "In case of personal data breach, Data Fiduciary shall notify the Data Protection Board and affected Data Principals within the time prescribed. The notification shall include description of breach, nature of personal data affected, potential consequences, and remedial actions taken.",
+      "keywords": ["data breach", "breach notification", "data protection board", "security incident"],
+      "applicable_contracts": ["Service Agreement", "Vendor Contract", "Outsourcing", "Cloud Services"]
+    },
+    {
+      "id": "RAG003",
+      "source": "MSMED Act 2006",
+      "section": "Section 15 - Liability of Buyer",
+      "content": "Where supplier supplies goods or renders services to buyer, buyer shall make payment on or before agreed date in writing or where no agreement, before appointed day. The period agreed upon shall not exceed 45 days from day of acceptance or deemed acceptance.",
+      "keywords": ["45 days", "payment terms", "supplier", "buyer", "msme", "small enterprise"],
+      "applicable_contracts": ["Procurement", "Vendor Contract", "Supply Agreement"]
+    },
+    {
+      "id": "RAG004",
+      "source": "MSMED Act 2006",
+      "section": "Section 16 - Interest Payable",
+      "content": "Where buyer fails to make payment as required, buyer shall be liable to pay compound interest with monthly rests at three times of the bank rate notified by Reserve Bank of India, from the appointed day or date immediately following the agreed date.",
+      "keywords": ["compound interest", "monthly rests", "three times bank rate", "delayed payment", "penalty interest"],
+      "applicable_contracts": ["Procurement", "Vendor Contract", "Supply Agreement"]
+    },
+    {
+      "id": "RAG005",
+      "source": "Income Tax Act 2025",
+      "section": "Section 393 - TDS on Payments to Residents",
+      "content": "TDS rates: 2% on commission/brokerage, 2% on rent (machinery/plant), 10% on rent (land/building), 1% on immovable property transfer consideration exceeding Rs. 50 lakhs, 2% on contractor payments (other than individual/HUF), 10% on professional fees.",
+      "keywords": ["tds rate", "tax deduction", "withholding", "section 393", "rent tds", "contractor tds", "professional fees tds"],
+      "applicable_contracts": ["Service Agreement", "Vendor Contract", "Rent Agreement", "Professional Services", "Works Contract"]
+    },
+    {
+      "id": "RAG006",
+      "source": "Income Tax Act 2025",
+      "section": "Section 398 - Consequences of TDS Default",
+      "content": "Failure to deduct or pay TDS results in disallowance of 30% of sum payable to resident. For payments to non-residents, entire sum is disallowed. Interest at 1% per month for delay in deduction, 1.5% per month for delay in payment after deduction. Penalty equal to tax amount. Prosecution with imprisonment up to 7 years.",
+      "keywords": ["tds default", "penalty", "disallowance", "interest", "prosecution", "imprisonment", "assessee in default"],
+      "applicable_contracts": ["All Contracts with TDS obligations"]
+    },
+    {
+      "id": "RAG007",
+      "source": "CGST Act 2017",
+      "section": "Section 7 - Scope of Supply",
+      "content": "Supply includes all forms of supply for consideration in course of business. Schedule I includes activities without consideration (e.g., permanent transfer of assets with ITC claimed). Schedule III excludes certain activities (e.g., employee services).",
+      "keywords": ["supply", "taxable supply", "schedule i", "schedule iii", "gst", "consideration"],
+      "applicable_contracts": ["Service Agreement", "Sales Contract"]
+    },
+    {
+      "id": "RAG008",
+      "source": "CGST Act 2017",
+      "section": "Section 31 - Tax Invoice",
+      "content": "Registered person supplying goods shall issue tax invoice before or at time of removal. For services, invoice within 30 days of supply. Invoice must contain GSTIN, serial number, date, description, value, tax rate and amount.",
+      "keywords": ["tax invoice", "gst invoice", "invoice requirements", "gstin", "invoice serial number"],
+      "applicable_contracts": ["Procurement", "Sales Contract", "Service Agreement"]
+    },
+    {
+      "id": "RAG009",
+      "source": "CGST Rules 2017",
+      "section": "Rule 46 - Tax Invoice Particulars",
+      "content": "Tax invoice must contain name, address, GSTIN of supplier, consecutive serial number not exceeding 16 characters, date of issue, name and GSTIN of recipient, HSN code, description, quantity, value, taxable value, rate and amount of tax.",
+      "keywords": ["tax invoice", "invoice particulars", "gst rule 46", "hsn code", "taxable value"],
+      "applicable_contracts": ["Procurement", "Sales Contract"]
+    },
+    {
+      "id": "RAG010",
+      "source": "ISO 27001:2022",
+      "section": "Annexure A.5.11",
+      "content": "Return of Assets - All assets shall be returned upon termination or change of employment. Organizations shall document procedures for asset return including timelines, verification of return, and consequences of non-return.",
+      "keywords": ["return of assets", "asset return", "termination obligations", "equipment return"],
+      "applicable_contracts": ["Employment Contract", "Service Agreement", "Vendor Contract", "Lease Agreement"]
+    },
+    {
+      "id": "RAG011",
+      "source": "ISO 27001:2022",
+      "section": "Annexure A.5.34",
+      "content": "Privacy and Protection of PII - Organizations shall identify and comply with PII protection requirements. Data processing agreements shall specify purpose, scope, nature of processing, duration, and rights and obligations of parties.",
+      "keywords": ["privacy", "pii protection", "personal data", "processing agreement", "data subject rights"],
+      "applicable_contracts": ["Service Agreement", "SaaS Agreement", "Vendor Contract", "Outsourcing"]
+    },
+    {
+      "id": "RAG012",
+      "source": "Technology License Agreement Principles",
+      "section": "Key Provisions",
+      "content": "Software license agreements should specify scope of license (users, purpose, duration, territory), acceptance testing procedures, maintenance and support obligations, source code escrow arrangements, IP ownership and license grants, warranties, indemnities, liability limitations, confidentiality, and termination rights.",
+      "keywords": ["software license", "license scope", "source code escrow", "ip ownership", "license agreement", "acceptance testing"],
+      "applicable_contracts": ["Software License", "Technology License", "SaaS Agreement"]
+    },
+    {
+      "id": "RAG013",
+      "source": "SANS Acceptable Encryption Standard",
+      "section": "Algorithm Requirements",
+      "content": "AES recommended for symmetric encryption. RSA and ECC recommended for asymmetric encryption. Minimum key lengths: RSA 2048, ECDSA P-256. Key exchanges must use Diffie-Hellman, IKE, or ECDH.",
+      "keywords": ["encryption", "aes", "rsa", "ecc", "key length", "tls", "ssh"],
+      "applicable_contracts": ["Service Agreement", "Technology License", "Data Protection Agreements"]
+    },
+    {
+      "id": "RAG014",
+      "source": "MICROSOFT Vendor Services Agreement",
+      "section": "Key Provisions Example",
+      "content": "Standard vendor agreement provisions include: termination for cause with cure period, limitation of liability (capped at fees paid), indemnification for IP infringement, confidentiality obligations, audit rights, governing law (Washington state), and arbitration dispute resolution.",
+      "keywords": ["vendor agreement", "service agreement", "limitation of liability", "indemnity", "audit rights", "governing law"],
+      "applicable_contracts": ["Vendor Contract", "Service Agreement", "Outsourcing"]
+    },
+    {
+      "id": "RAG015",
+      "source": "Contract Interpretation Principles",
+      "section": "Key Principles",
+      "content": "Courts interpret contracts using objective standard - words given ordinary and natural meaning. Entire agreement clauses exclude pre-contractual statements. Disclaimers exclude implied warranties. External documents incorporated by reference are binding even if not read.",
+      "keywords": ["contract interpretation", "entire agreement", "disclaimer", "incorporation by reference", "ordinary meaning"],
+      "applicable_contracts": ["All Contract Types"]
+    },
+    {
+      "id": "RAG016",
+      "source": "Microsoft NDA Template",
+      "section": "Confidentiality Obligations",
+      "content": "Confidential Information excludes information that is or becomes publicly available, was lawfully known before disclosure, is received from third party without restriction, or is independently developed. Confidentiality obligations survive termination without time limit.",
+      "keywords": ["nda", "confidential information", "exclusions", "survival", "non-disclosure", "trade secrets"],
+      "applicable_contracts": ["NDA", "Confidentiality Agreement", "Employment Contract", "Vendor Contract"]
+    },
+    {
+      "id": "RAG017",
+      "source": "SANS Acceptable Use Standard",
+      "section": "Unacceptable Use",
+      "content": "Prohibited activities include unauthorized copying of copyrighted material, installing unlicensed software, accessing data without authorization, introducing malware, revealing passwords, port scanning without notification, and interfering with network service.",
+      "keywords": ["acceptable use", "prohibited use", "copyright", "malware", "unauthorized access", "password security", "port scanning"],
+      "applicable_contracts": ["Employment Contract", "Service Agreement", "Vendor Contract", "Internet Usage Policy"]
+    },
+    {
+      "id": "RAG018",
+      "source": "SANS Privileged Account Management Policy",
+      "section": "Safeguards",
+      "content": "Multi-Factor Authentication required for all privileged accounts. Privileged account management systems shall automatically rotate credentials using unique credentials for each system. Organizations shall log and alert changes to privileged group memberships.",
+      "keywords": ["privileged account", "mfa", "multi-factor authentication", "credential rotation", "pam", "privileged access"],
+      "applicable_contracts": ["Service Agreement", "Outsourcing", "IT Support Agreement"]
+    }
+  ]
+}

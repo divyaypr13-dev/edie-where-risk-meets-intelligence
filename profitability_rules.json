@@ -1,0 +1,101 @@
+
+{
+  "profitability_rules": [
+    {
+      "rule_id": "PR001",
+      "factor": "Unlimited Liability",
+      "estimated_cost_percentage": 20,
+      "impact": "High",
+      "description": "Uncapped liability represents potential for unlimited financial exposure, requiring contingency reserves",
+      "applicable_contracts": ["Service Agreement", "Software License", "Vendor Contract", "Outsourcing"]
+    },
+    {
+      "rule_id": "PR002",
+      "factor": "Foreign Governing Law",
+      "estimated_cost_percentage": 12,
+      "impact": "Medium",
+      "description": "Increased legal costs for foreign counsel, travel, time zone coordination",
+      "applicable_contracts": ["All Contract Types with cross-border element"]
+    },
+    {
+      "rule_id": "PR003",
+      "factor": "No Liability Cap",
+      "estimated_cost_percentage": 15,
+      "impact": "High",
+      "description": "Missing liability cap increases risk exposure and required insurance costs",
+      "applicable_contracts": ["All Contract Types"]
+    },
+    {
+      "rule_id": "PR004",
+      "factor": "Unfavorable Payment Terms (Net 60+)",
+      "estimated_cost_percentage": 3,
+      "impact": "Low",
+      "description": "Long payment cycles increase working capital requirements and financing costs",
+      "applicable_contracts": ["Procurement", "Vendor Contract", "Service Agreement"]
+    },
+    {
+      "rule_id": "PR005",
+      "factor": "No Price Escalation Protection",
+      "estimated_cost_percentage": 5,
+      "impact": "Medium",
+      "description": "Lack of price caps can significantly impact margins over multi-year contracts",
+      "applicable_contracts": ["Long-term Procurement", "Service Agreement", "Lease Agreement"]
+    },
+    {
+      "rule_id": "PR006",
+      "factor": "MSME Penalty Exposure",
+      "estimated_cost_percentage": 25,
+      "impact": "Critical",
+      "description": "MSME penalty interest at 3x bank rate with monthly compounding - can exceed 30% annually",
+      "applicable_contracts": ["Procurement", "Vendor Contract", "Supply Agreement with MSME suppliers"]
+    },
+    {
+      "rule_id": "PR007",
+      "factor": "No Termination for Convenience",
+      "estimated_cost_percentage": 8,
+      "impact": "Medium",
+      "description": "Locked into contracts without exit option, cannot pivot when business needs change",
+      "applicable_contracts": ["Long-term Service Agreements", "Outsourcing Contracts", "Lease Agreements"]
+    },
+    {
+      "rule_id": "PR008",
+      "factor": "Automatic Renewal",
+      "estimated_cost_percentage": 5,
+      "impact": "Medium",
+      "description": "Risk of unintended renewal at unfavorable rates, requires proactive management resources",
+      "applicable_contracts": ["Service Agreements", "Software License", "Lease Agreements", "Maintenance Contracts"]
+    },
+    {
+      "rule_id": "PR009",
+      "factor": "No Audit Rights",
+      "estimated_cost_percentage": 7,
+      "impact": "Medium",
+      "description": "Cannot verify vendor performance, billing accuracy, compliance - potential overpayment",
+      "applicable_contracts": ["Service Agreements", "Outsourcing Contracts", "Vendor Contracts"]
+    },
+    {
+      "rule_id": "PR010",
+      "factor": "Unfavorable Dispute Resolution Venue",
+      "estimated_cost_percentage": 10,
+      "impact": "Medium",
+      "description": "Distant arbitration venue increases travel costs, legal fees, and logistical complexity",
+      "applicable_contracts": ["All Contract Types with non-local counterparties"]
+    },
+    {
+      "rule_id": "PR011",
+      "factor": "No SLA Service Credits",
+      "estimated_cost_percentage": 8,
+      "impact": "Medium",
+      "description": "No compensation for service failures - pay full price for reduced service quality",
+      "applicable_contracts": ["Service Agreements", "IT Support", "Cloud Services", "Outsourcing"]
+    },
+    {
+      "rule_id": "PR012",
+      "factor": "Data Protection Non-Compliance",
+      "estimated_cost_percentage": 30,
+      "impact": "Critical",
+      "description": "Potential fines up to Rs. 250 Crore, legal costs, reputational damage",
+      "applicable_contracts": ["Service Agreements", "Vendor Contracts", "SaaS Agreements", "Outsourcing"]
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+ [
+    {
+      "framework_id": "ISO27001",
+      "framework_name": "ISO 27001:2022",
+      "domain": "Cyber Security",
+      "jurisdiction": "International",
+      "controls": [
+        {
+          "control_id": "A.5.7",
+          "title": "Threat Intelligence",
+          "description": "Information relating to information security threats shall be collected and analyzed to produce threat intelligence.",
+          "keywords": ["threat intelligence", "security monitoring", "threat detection", "vulnerability intelligence"],
+          "risk_weight": 5,
+          "mandatory": false,
+          "contract_mapping": "Security requirements, monitoring obligations"
+        },
+        {
+          "control_id": "A.5.8",
+          "title": "Information Security in Project Management",
+          "description": "Information security shall be integrated into project management.",
+          "keywords": ["project management", "security by design", "development lifecycle", "secure development"],
+          "risk_weight": 4,
+          "mandatory": false,
+          "contract_mapping": "Development agreements, SDLC requirements"
+        },
+        {
+          "control_id": "A.5.9",
+          "title": "Inventory of Information and Other Associated Assets",
+          "description": "An inventory of information and other associated assets shall be developed and maintained.",
+          "keywords": ["asset inventory", "asset management", "information assets", "hardware inventory", "software inventory"],
+          "risk_weight": 3,
+          "mandatory": false,
+          "contract_mapping": "IT asset management clauses"
+        },
+        {
+          "control_id": "A.5.10",
+          "title": "Acceptable Use of Information and Other Associated Assets",
+          "description": "Rules for the acceptable use of information and assets shall be documented and implemented.",
+          "keywords": ["acceptable use", "use policy", "information usage", "asset usage"],
+          "risk_weight": 2,
+          "mandatory": false,
+          "contract_mapping": "Acceptable use policies"
+        },
+        {
+          "control_id": "A.5.11",
+          "title": "Return of Assets",
+          "description": "Assets shall be returned upon termination or change of employment.",
+          "keywords": ["return of assets", "asset return", "equipment return", "property return", "termination obligations"],
+          "risk_weight": 3,
+          "mandatory": true,
+          "contract_mapping": "Termination provisions, asset return clauses"
+        },
+        {
+          "control_id": "A.5.14",
+          "title": "Information Transfer",
+          "description": "Information transfer rules and procedures shall be established.",
+          "keywords": ["information transfer", "data transfer", "secure transfer", "encrypted transfer"],
+          "risk_weight": 4,
+          "mandatory": false,
+          "contract_mapping": "Data transfer agreements, encryption requirements"
+        },
+        {
+          "control_id": "A.5.15",
+          "title": "Access Control",
+          "description": "Rules to control physical and logical access to information shall be established.",
+          "keywords": ["access control", "access management", "user access", "privileged access", "authentication"],
+          "risk_weight": 5,
+          "mandatory": true,
+          "contract_mapping": "Access management clauses, authentication requirements"
+        },
+        {
+          "control_id": "A.5.23",
+          "title": "Information Security for Use of Cloud Services",
+          "description": "Processes for acquisition, use, management and exit from cloud services shall be established.",
+          "keywords": ["cloud services", "saas", "iaas", "paas", "cloud computing", "cloud provider"],
+          "risk_weight": 5,
+          "mandatory": false,
+          "contract_mapping": "Cloud service agreements, SaaS contracts"
+        },
+        {
+          "control_id": "A.5.24",
+          "title": "Information Security Incident Management Planning and Preparation",
+          "description": "The organization shall plan and prepare for managing information security incidents.",
+          "keywords": ["incident management", "security incident", "breach response", "incident response"],
+          "risk_weight": 5,
+          "mandatory": true,
+          "contract_mapping": "Incident response clauses, breach notification"
+        },
+        {
+          "control_id": "A.5.25",
+          "title": "Assessment and Decision on Information Security Events",
+          "description": "Information security events shall be assessed and decision made on classification as incidents.",
+          "keywords": ["security events", "event assessment", "incident classification"],
+          "risk_weight": 4,
+          "mandatory": true,
+          "contract_mapping": "Event monitoring and reporting obligations"
+        },
+        {
+          "control_id": "A.5.26",
+          "title": "Response to Information Security Incidents",
+          "description": "Information security incidents shall be responded to in accordance with documented procedures.",
+          "keywords": ["incident response", "security incident response", "breach response", "containment", "remediation"],
+          "risk_weight": 5,
+          "mandatory": true,
+          "contract_mapping": "Incident response timeframes and obligations"
+        },
+        {
+          "control_id": "A.5.31",
+          "title": "Legal, Statutory, Regulatory and Contractual Requirements",
+          "description": "Legal, statutory, regulatory and contractual requirements shall be identified and documented.",
+          "keywords": ["legal compliance", "regulatory compliance", "statutory requirements", "contractual obligations"],
+          "risk_weight": 6,
+          "mandatory": true,
+          "contract_mapping": "Compliance representations and warranties"
+        },
+        {
+          "control_id": "A.5.34",
+          "title": "Privacy and Protection of Personal Identifiable Information (PII)",
+          "description": "The organization shall identify and comply with PII protection requirements.",
+          "keywords": ["privacy", "personal data", "pii", "data protection", "gdpr", "dpdp"],
+          "risk_weight": 8,
+          "mandatory": true,
+          "contract_mapping": "Data protection clauses, DPDP compliance"
+        }
+      ]
+    },
+    {
+      "framework_id": "MITRE_ATTACK",
+      "framework_name": "MITRE ATT&CK Enterprise Framework",
+      "domain": "Cyber Threat Intelligence",
+      "jurisdiction": "International",
+      "controls": [
+        {
+          "control_id": "TA0001",
+          "title": "Initial Access",
+          "description": "Techniques used to gain initial foothold within a network.",
+          "keywords": ["initial access", "phishing", "exploit public-facing", "supply chain compromise"],
+          "risk_weight": 7,
+          "mandatory": false
+        },
+        {
+          "control_id": "TA0002",
+          "title": "Execution",
+          "description": "Techniques that result in execution of adversary-controlled code.",
+          "keywords": ["command execution", "scripting", "powershell", "exploitation"],
+          "risk_weight": 6,
+          "mandatory": false
+        },
+        {
+          "control_id": "TA0004",
+          "title": "Privilege Escalation",
+          "description": "Techniques used to gain higher-level permissions.",
+          "keywords": ["privilege escalation", "access elevation", "bypass user account control"],
+          "risk_weight": 6,
+          "mandatory": false
+        },
+        {
+          "control_id": "TA0005",
+          "title": "Defense Evasion",
+          "description": "Techniques used to avoid detection.",
+          "keywords": ["defense evasion", "disable security tools", "obfuscation", "masquerading"],
+          "risk_weight": 6,
+          "mandatory": false
+        },
+        {
+          "control_id": "TA0007",
+          "title": "Discovery",
+          "description": "Techniques used to gain knowledge about the system and network.",
+          "keywords": ["system discovery", "network scanning", "account discovery"],
+          "risk_weight": 4,
+          "mandatory": false
+        },
+        {
+          "control_id": "TA0008",
+          "title": "Lateral Movement",
+          "description": "Techniques used to move through a network.",
+          "keywords": ["lateral movement", "remote services", "remote desktop", "pass the hash"],
+          "risk_weight": 6,
+          "mandatory": false
+        },
+        {
+          "control_id": "TA0011",
+          "title": "Command and Control",
+          "description": "Techniques used to communicate with controlled systems.",
+          "keywords": ["c2", "command and control", "remote access", "backdoor"],
+          "risk_weight": 5,
+          "mandatory": false
+        },
+        {
+          "control_id": "TA0040",
+          "title": "Impact",
+          "description": "Techniques to disrupt availability or compromise integrity.",
+          "keywords": ["data destruction", "ransomware", "data manipulation", "denial of service"],
+          "risk_weight": 8,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "framework_id": "SANS",
+      "framework_name": "SANS Critical Security Controls",
+      "domain": "Security Controls",
+      "jurisdiction": "International",
+      "controls": [
+        {
+          "control_id": "CIS-1",
+          "title": "Inventory and Control of Enterprise Assets",
+          "description": "Actively manage all enterprise assets.",
+          "keywords": ["asset inventory", "hardware inventory", "asset management"],
+          "risk_weight": 5,
+          "mandatory": true,
+          "contract_mapping": "Asset management policies"
+        },
+        {
+          "control_id": "CIS-2",
+          "title": "Inventory and Control of Software Assets",
+          "description": "Actively manage all software assets.",
+          "keywords": ["software inventory", "application inventory", "licensed software"],
+          "risk_weight": 5,
+          "mandatory": true,
+          "contract_mapping": "Software license compliance"
+        },
+        {
+          "control_id": "CIS-5",
+          "title": "Account Management",
+          "description": "Manage accounts and authentication.",
+          "keywords": ["account management", "user accounts", "access management", "privileged accounts"],
+          "risk_weight": 6,
+          "mandatory": true,
+          "contract_mapping": "Access management clauses"
+        },
+        {
+          "control_id": "CIS-16",
+          "title": "Application Software Security",
+          "description": "Manage security of application software.",
+          "keywords": ["application security", "secure development", "vulnerability scanning", "code review"],
+          "risk_weight": 6,
+          "mandatory": false,
+          "contract_mapping": "Development security requirements"
+        }
+      ]
+    },
+    {
+      "framework_id": "CERT_IN",
+      "framework_name": "CERT-In Guidelines",
+      "domain": "Cyber Incident Response",
+      "jurisdiction": "India",
+      "controls": [
+        {
+          "control_id": "CERT-001",
+          "title": "Incident Reporting",
+          "description": "Mandatory reporting of cyber security incidents to CERT-In.",
+          "keywords": ["cert-in", "incident reporting", "cyber incident", "data breach reporting", "6 hours"],
+          "risk_weight": 9,
+          "mandatory": true,
+          "contract_mapping": "Incident reporting clauses, timeframes"
+        },
+        {
+          "control_id": "CERT-002",
+          "title": "Data Retention",
+          "description": "Logs and records shall be retained for specified periods.",
+          "keywords": ["log retention", "record retention", "audit logs", "log maintenance"],
+          "risk_weight": 6,
+          "mandatory": true,
+          "contract_mapping": "Data retention provisions"
+        },
+        {
+          "control_id": "CERT-003",
+          "title": "Synchronized Timekeeping",
+          "description": "Systems shall maintain synchronized time.",
+          "keywords": ["time synchronization", "ntp", "time stamps", "system time"],
+          "risk_weight": 3,
+          "mandatory": false,
+          "contract_mapping": "System configuration requirements"
+        }
+      ]
+    }
+  ]

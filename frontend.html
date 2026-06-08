@@ -1,0 +1,797 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIE Enterprise - Contract Risk Intelligence Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+        
+        .navbar {
+            background: #0d1117;
+            border-bottom: 1px solid #30363d;
+            padding: 12px 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #58a6ff, #bc8cff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        
+        .card {
+            background: #161b22;
+            border-radius: 16px;
+            border: 1px solid #30363d;
+            margin-bottom: 20px;
+        }
+        
+        .card-header {
+            background: #1f242e;
+            border-bottom: 1px solid #30363d;
+            border-radius: 16px 16px 0 0;
+            padding: 15px 20px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .card-body { padding: 20px; color: #e6edf3; }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #1a1f2e, #161b22);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #58a6ff;
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover { transform: translateY(-3px); }
+        .stat-value { font-size: 2rem; font-weight: bold; color: #58a6ff; }
+        
+        .risk-score {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: conic-gradient(from 0deg, var(--color) 0deg, var(--color) var(--degree), #30363d var(--degree));
+        }
+        
+        .risk-score-inner {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #0d1117;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .risk-number { font-size: 3rem; font-weight: bold; color: #ffffff; }
+        
+        .upload-area {
+            border: 2px dashed #30363d;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+        
+        .upload-area:hover { border-color: #58a6ff; background: #1a1f2e; }
+        
+        .btn-primary {
+            background: #238636;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover { background: #2ea043; }
+        
+        .btn-secondary {
+            background: #21262d;
+            border: 1px solid #30363d;
+            color: #ffffff;
+        }
+        
+        .btn-secondary:hover { background: #30363d; }
+        
+        .risk-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .risk-critical { background: #f85149; color: #ffffff; }
+        .risk-high { background: #d29922; color: #ffffff; }
+        .risk-medium { background: #e3b341; color: #0d1117; }
+        .risk-low { background: #2ea043; color: #ffffff; }
+        .risk-minimal { background: #58a6ff; color: #ffffff; }
+        
+        .clause-item {
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            background: #0d1117;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #e6edf3;
+        }
+        
+        .clause-present { border-left: 3px solid #2ea043; }
+        .clause-missing { border-left: 3px solid #f85149; }
+        
+        .recommendation-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: #1a2e1a;
+            border-left: 3px solid #2ea043;
+            border-radius: 8px;
+            color: #e6edf3;
+        }
+        
+        .ai-insight {
+            background: #1a1f3e;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #58a6ff;
+            color: #e6edf3;
+        }
+        
+        .summary-box {
+            background: #1a1f2e;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #58a6ff;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        .explanation-box {
+            background: #0d1117;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 10px;
+            border-left: 3px solid #58a6ff;
+            font-size: 0.9rem;
+            color: #c9d1d9;
+        }
+        
+        .analysis-chat-container {
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            background: #0d1117;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .message { margin-bottom: 12px; display: flex; }
+        .message.user { justify-content: flex-end; }
+        .message.user .message-bubble {
+            background: #238636;
+            border-radius: 16px 16px 4px 16px;
+            color: #ffffff;
+        }
+        .message.ai .message-bubble {
+            background: #1f242e;
+            border-radius: 16px 16px 16px 4px;
+            border: 1px solid #30363d;
+            color: #e6edf3;
+        }
+        .message-bubble {
+            max-width: 85%;
+            padding: 8px 14px;
+            word-wrap: break-word;
+            font-size: 0.9rem;
+        }
+        
+        .typing-indicator { display: flex; gap: 4px; padding: 8px 14px; }
+        .typing-indicator span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #58a6ff;
+            animation: typing 1.4s infinite;
+        }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-6px); opacity: 1; }
+        }
+        
+        .nav-tabs .nav-link {
+            color: #e6edf3;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 24px;
+            margin: 0 5px;
+            cursor: pointer;
+            background: transparent;
+        }
+        .nav-tabs .nav-link.active {
+            background: #238636;
+            color: white;
+        }
+        .nav-tabs .nav-link:hover { background: #21262d; color: white; }
+        
+        textarea, input, select {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 12px;
+            color: #ffffff;
+        }
+        textarea::placeholder, input::placeholder { color: #8b949e; }
+        textarea:focus, input:focus, select:focus {
+            outline: none;
+            border-color: #58a6ff;
+        }
+        
+        .progress-bar-custom {
+            height: 8px;
+            border-radius: 4px;
+            background: #30363d;
+            overflow: hidden;
+        }
+        .progress-fill { height: 100%; border-radius: 4px; transition: width 0.5s; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0d1117; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+        
+        .text-muted { color: #8b949e !important; }
+        .text-warning { color: #e3b341 !important; }
+        .text-success { color: #2ea043 !important; }
+        .text-danger { color: #f85149 !important; }
+        
+        hr { border-color: #30363d; }
+        
+        .suggestion-chip {
+            background: #21262d;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .suggestion-chip:hover {
+            background: #30363d;
+            transform: scale(1.02);
+        }
+        
+        .chat-container {
+            height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+            background: #0d1117;
+            border-radius: 12px;
+        }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        @media (max-width: 768px) {
+            .stat-value { font-size: 1.5rem; }
+            .message-bubble { max-width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-brain"></i> EDIE – Where Risk Meets Intelligence.
+            </a>
+            <div>
+                <span class="badge bg-success" id="aiStatus">
+                    <i class="fas fa-microchip"></i> Checking...
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Tab Buttons -->
+        <div class="nav-tabs mb-4" style="display: flex; gap: 8px; flex-wrap: wrap; border-bottom: none;">
+            <button class="nav-link active" onclick="switchTab('dashboard')">
+                <i class="fas fa-chart-line"></i> Dashboard
+            </button>
+            <button class="nav-link" onclick="switchTab('analyze')">
+                <i class="fas fa-file-contract"></i> Analyze Contract
+            </button>
+            <button class="nav-link" onclick="switchTab('assistant')">
+                <i class="fas fa-robot"></i> AI Assistant
+            </button>
+            <button class="nav-link" onclick="switchTab('history')">
+                <i class="fas fa-history"></i> History
+            </button>
+        </div>
+
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+            <div class="row" id="dashboardStats">
+                <div class="col-md-3 mb-3"><div class="stat-card"><i class="fas fa-file-contract fa-2x mb-2"></i><div class="stat-value" id="totalDocs">0</div><small>Contracts Analyzed</small></div></div>
+                <div class="col-md-3 mb-3"><div class="stat-card"><i class="fas fa-exclamation-triangle fa-2x mb-2"></i><div class="stat-value" id="highRisk">0</div><small>High Risk Contracts</small></div></div>
+                <div class="col-md-3 mb-3"><div class="stat-card"><i class="fas fa-chart-line fa-2x mb-2"></i><div class="stat-value" id="avgRisk">0</div><small>Avg Risk Score</small></div></div>
+                <div class="col-md-3 mb-3"><div class="stat-card"><i class="fas fa-database fa-2x mb-2"></i><div class="stat-value" id="kbCount">0</div><small>KB Documents</small></div></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3"><div class="card"><div class="card-header"><i class="fas fa-chart-pie"></i> Risk Distribution</div><div class="card-body"><canvas id="riskChart" height="250"></canvas></div></div></div>
+                <div class="col-md-6 mb-3"><div class="card"><div class="card-header"><i class="fas fa-clock"></i> Recent Analyses</div><div class="card-body" id="recentAnalyses"><p class="text-muted">No analyses yet</p></div></div></div>
+            </div>
+        </div>
+
+        <!-- Analyze Tab -->
+        <div id="analyze" class="tab-content">
+            <div class="row">
+                <div class="col-lg-5 mb-3">
+                    <div class="card">
+                        <div class="card-header"><i class="fas fa-upload"></i> Upload Contract</div>
+                        <div class="card-body">
+                            <div class="upload-area" id="uploadArea">
+                                <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+                                <p>Click or drag to upload</p>
+                                <small>PDF, DOCX, TXT</small>
+                                <input type="file" id="fileInput" accept=".pdf,.docx,.txt" style="display: none">
+                            </div>
+                            <hr>
+                            <label class="form-label">Or paste contract text</label>
+                            <textarea id="contractText" rows="6" placeholder="Paste your contract text here..."></textarea>
+                            <div class="row mt-3">
+                                <div class="col-md-4"><label class="form-label">Contract Value (₹)</label><input type="number" id="contractValue" class="form-control" value="10000000"></div>
+                                <div class="col-md-4"><label class="form-label">Term (Years)</label><input type="number" id="termYears" class="form-control" value="2"></div>
+                                <div class="col-md-4"><label class="form-label">Industry</label><select id="industry" class="form-control"><option value="default">General</option><option value="banking">Banking</option><option value="healthcare">Healthcare</option><option value="government">Government</option><option value="technology">Technology</option></select></div>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3" onclick="analyzeContract()"><i class="fas fa-microchip"></i> Analyze Contract</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 mb-3"><div id="analysisResults"><div class="card"><div class="card-body text-center text-muted"><i class="fas fa-chart-line fa-3x mb-2"></i><p>Upload or paste a contract to see analysis results</p></div></div></div></div>
+            </div>
+        </div>
+
+        <!-- AI Assistant Tab -->
+        <div id="assistant" class="tab-content">
+            <div class="card">
+                <div class="card-header"><i class="fas fa-robot"></i> EDIE AI Assistant <small class="text-muted ms-2">Ask about DPDP, MSME, GST, ISO 27001, contracts, HR policies, risk patterns, compliance frameworks, or legal glossary</small></div>
+                <div class="card-body">
+                    <div class="chat-container" id="chatMessages">
+                        <div class="message ai">
+                            <div class="message-bubble">
+                                👋 Hello! I'm EDIE, your conversational AI assistant.<br><br>
+                                I can help you with:<br>
+                                • 📜 <strong>Legal Knowledge Base</strong> - DPDP Act, MSME Act, GST Act, Income Tax Act, penalties<br>
+                                • 📋 <strong>Contract Clause Library</strong> - Standard clauses, red flags, recommendations<br>
+                                • ⚠️ <strong>Risk Patterns</strong> - Critical risk detection, severity, business impact<br>
+                                • 🔒 <strong>Compliance Frameworks</strong> - ISO 27001, MITRE ATT&CK, SANS, CERT-In controls<br>
+                                • 🏭 <strong>Industry Profiles</strong> - Industry-specific risk multipliers, required regulations<br>
+                                • 💰 <strong>Profitability Rules</strong> - Financial impact assessment for different risk factors<br>
+                                • 💡 <strong>Recommendation Library</strong> - Actionable fixes with sample clauses<br>
+                                • 📖 <strong>Glossary</strong> - Legal term definitions<br>
+                                • 📚 <strong>RAG Documents</strong> - Knowledge chunks for detailed answers<br><br>
+                                What would you like to know?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" id="chatInput" placeholder="Type your question here..." onkeypress="if(event.key==='Enter') sendMessage()">
+                        <button class="btn btn-primary" onclick="sendMessage()"><i class="fas fa-paper-plane"></i> Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Tab -->
+        <div id="history" class="tab-content">
+            <div class="card">
+                <div class="card-header"><i class="fas fa-history"></i> Analysis History</div>
+                <div class="card-body" id="historyList"><p class="text-muted text-center">No history available</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';
+        let riskChart = null;
+        let currentAnalysis = null;
+        let analysisSessionId = null;
+        let mainSessionId = null;
+        
+        // Tab switching function
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-link').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+            event.target.closest('.nav-link').classList.add('active');
+            
+            if (tabName === 'dashboard') {
+                loadDashboard();
+                loadKnowledgeBaseStatus();
+            }
+            if (tabName === 'history') {
+                loadHistory();
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAIStatus();
+            loadDashboard();
+            loadKnowledgeBaseStatus();
+            loadHistory();
+            startNewSession();
+            
+            document.getElementById('uploadArea').onclick = () => document.getElementById('fileInput').click();
+            document.getElementById('fileInput').onchange = (e) => { if(e.target.files.length) uploadFile(e.target.files[0]); };
+        });
+        
+        async function startNewSession() {
+            mainSessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+        
+        async function checkAIStatus() {
+            try {
+                const res = await fetch(`${API_BASE}/`);
+                const data = await res.json();
+                const statusSpan = document.getElementById('aiStatus');
+                if (data.ai_available) {
+                    statusSpan.innerHTML = '<i class="fas fa-microchip"></i> AI Ready (Gemma)';
+                    statusSpan.className = 'badge bg-success';
+                } else {
+                    statusSpan.innerHTML = '<i class="fas fa-microchip"></i> AI Disabled - Set API Key';
+                    statusSpan.className = 'badge bg-warning';
+                }
+            } catch(e) { console.error('API error'); }
+        }
+        
+        async function loadDashboard() {
+            try {
+                const res = await fetch(`${API_BASE}/dashboard`);
+                const data = await res.json();
+                document.getElementById('totalDocs').innerText = data.total_documents_analyzed || 0;
+                document.getElementById('highRisk').innerText = data.high_risk_contracts || 0;
+                document.getElementById('avgRisk').innerText = data.average_risk_score || 0;
+                
+                if(riskChart) riskChart.destroy();
+                const ctx = document.getElementById('riskChart').getContext('2d');
+                riskChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: { labels: ['Critical', 'High', 'Medium', 'Low'], datasets: [{ data: [data.risk_distribution?.critical || 0, data.risk_distribution?.high || 0, data.risk_distribution?.medium || 0, data.risk_distribution?.low || 0], backgroundColor: ['#f85149', '#d29922', '#e3b341', '#2ea043'] }] },
+                    options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { color: '#e6edf3' } } } }
+                });
+                
+                const recentDiv = document.getElementById('recentAnalyses');
+                if(data.recent_uploads?.length) {
+                    recentDiv.innerHTML = data.recent_uploads.map(item => `<div class="d-flex justify-content-between align-items-center mb-2 p-2" style="background:#0d1117;border-radius:10px;"><div><i class="fas fa-file-contract"></i> ${item.filename.substring(0,30)}<br><small class="text-muted">${item.date}</small></div><span class="risk-badge ${getRiskClass(item.risk_score)}">${item.risk_score}</span></div>`).join('');
+                } else { recentDiv.innerHTML = '<p class="text-muted">No recent analyses</p>'; }
+            } catch(e) { console.error(e); }
+        }
+        
+        async function loadKnowledgeBaseStatus() {
+            try {
+                const res = await fetch(`${API_BASE}/knowledge-base/status`);
+                const data = await res.json();
+                document.getElementById('kbCount').innerText = data.files_loaded || 9;
+            } catch(e) { console.error(e); }
+        }
+        
+        async function loadHistory() {
+            try {
+                const res = await fetch(`${API_BASE}/history`);
+                const data = await res.json();
+                const historyDiv = document.getElementById('historyList');
+                if(data.history?.length) {
+                    historyDiv.innerHTML = data.history.map((item, idx) => `<div class="p-3 mb-2" style="background:#0d1117;border-radius:10px;"><div class="d-flex justify-content-between"><div><strong>#${idx+1}</strong> - ${item.filename || 'Input'}<br><small class="text-muted">${new Date(item.created_at).toLocaleString()}</small></div><div><span class="risk-badge ${getRiskClass(item.risk_assessment?.score)}">Score: ${item.risk_assessment?.score || 0}</span><span class="badge bg-secondary ms-2">${item.risk_assessment?.decision || 'Unknown'}</span></div></div></div>`).join('');
+                } else { historyDiv.innerHTML = '<p class="text-muted text-center">No analysis history yet</p>'; }
+            } catch(e) { console.error(e); }
+        }
+        
+        async function analyzeContract() {
+            const text = document.getElementById('contractText').value;
+            if(!text.trim()) { alert('Please enter contract text or upload a file'); return; }
+            
+            document.getElementById('analysisResults').innerHTML = '<div class="card"><div class="card-body text-center"><div class="spinner-border text-primary"></div><p class="mt-2">Analyzing contract with AI...</p></div></div>';
+            
+            try {
+                const res = await fetch(`${API_BASE}/analyze`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contract_text: text,
+                        contract_value: parseFloat(document.getElementById('contractValue').value),
+                        term_years: parseInt(document.getElementById('termYears').value),
+                        industry: document.getElementById('industry').value
+                    })
+                });
+                const result = await res.json();
+                if(result.success) { displayResults(result.data); loadDashboard(); loadHistory(); }
+                else { showError(result.error); }
+            } catch(e) { showError('Connection error. Make sure backend is running on port 8000'); }
+        }
+        
+        async function uploadFile(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('contract_value', document.getElementById('contractValue').value);
+            formData.append('term_years', document.getElementById('termYears').value);
+            formData.append('industry', document.getElementById('industry').value);
+            
+            document.getElementById('analysisResults').innerHTML = '<div class="card"><div class="card-body text-center"><div class="spinner-border text-primary"></div><p class="mt-2">Processing file...</p></div></div>';
+            
+            try {
+                const res = await fetch(`${API_BASE}/analyze-file`, { method: 'POST', body: formData });
+                const result = await res.json();
+                if(result.success) { displayResults(result.data); loadDashboard(); loadHistory(); }
+                else { showError(result.error); }
+            } catch(e) { showError('Connection error'); }
+        }
+        
+        async function sendAnalysisMessage(question) {
+            if (!question || !question.trim()) return;
+            if (!currentAnalysis) {
+                alert("No analysis available. Please analyze a contract first.");
+                return;
+            }
+            
+            const chatDiv = document.getElementById('analysisChatMessages');
+            if (!chatDiv) return;
+            
+            chatDiv.innerHTML += `<div class="message user"><div class="message-bubble">${escapeHtml(question)}</div></div>`;
+            chatDiv.innerHTML += `<div class="message ai"><div class="message-bubble"><div class="typing-indicator"><span></span><span></span><span></span></div></div></div>`;
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+            
+            try {
+                const formData = new FormData();
+                formData.append('question', question);
+                formData.append('analysis_data', JSON.stringify(currentAnalysis));
+                if (analysisSessionId) formData.append('session_id', analysisSessionId);
+                
+                const res = await fetch(`${API_BASE}/ai/ask-analysis`, { method: 'POST', body: formData });
+                const result = await res.json();
+                
+                chatDiv.removeChild(chatDiv.lastChild);
+                
+                if (result.success) {
+                    chatDiv.innerHTML += `<div class="message ai"><div class="message-bubble">${escapeHtml(result.answer)}</div></div>`;
+                    if (result.session_id) analysisSessionId = result.session_id;
+                } else {
+                    chatDiv.innerHTML += `<div class="message ai"><div class="message-bubble text-danger">⚠️ ${escapeHtml(result.error || 'Could not get response')}</div></div>`;
+                }
+                chatDiv.scrollTop = chatDiv.scrollHeight;
+            } catch (error) {
+                chatDiv.removeChild(chatDiv.lastChild);
+                chatDiv.innerHTML += `<div class="message ai"><div class="message-bubble text-danger">⚠️ Connection error. Make sure backend is running.</div></div>`;
+                chatDiv.scrollTop = chatDiv.scrollHeight;
+            }
+        }
+        
+        function displayResults(data) {
+            currentAnalysis = data;
+            const risk = data.risk_assessment;
+            const riskColor = risk.score >= 80 ? '#f85149' : risk.score >= 65 ? '#d29922' : risk.score >= 45 ? '#e3b341' : '#2ea043';
+            const riskDegree = (risk.score / 100) * 360;
+            
+            const missingHtml = (data.clause_analysis.missing_list || []).slice(0,13).map(c => `<div class="clause-item clause-missing"><i class="fas fa-times-circle text-danger me-2"></i> ${c}</div>`).join('');
+            const presentHtml = (data.clause_analysis.present_list || []).slice(0,8).map(c => `<div class="clause-item clause-present"><i class="fas fa-check-circle text-success me-2"></i> ${c}</div>`).join('');
+            const recsHtml = (data.recommendations || []).slice(0,6).map(r => `<div class="recommendation-item"><i class="fas fa-lightbulb text-warning me-2"></i> ${r}</div>`).join('');
+            const complianceHtml = (data.compliance?.standards || []).map(s => `<div class="d-flex justify-content-between align-items-center mb-2"><span>${s.standard}</span><div class="w-50"><div class="progress-bar-custom"><div class="progress-fill" style="width: ${s.score}%; background: ${s.score>=70?'#2ea043':s.score>=40?'#d29922':'#f85149'}"></div></div></div><span>${s.score}%</span></div>`).join('');
+            
+            const fin = data.financial_analysis;
+            const financialFormula = `📊 Calculation Breakdown:
+• Expected Profit = Contract Value × Term × 30% = ₹${(fin.contract_value/10000000).toFixed(1)}Cr × ${fin.term_years} × 0.30 = ₹${(fin.expected_profit/10000000).toFixed(1)}Cr
+• Risk Exposure = (Missing Clauses / Total Clauses) × Contract Value × 5% = (${data.clause_analysis.missing}/${data.clause_analysis.total}) × ₹${(fin.contract_value/10000000).toFixed(1)}Cr × 0.05 = ₹${(fin.risk_exposure/10000000).toFixed(1)}Cr
+• Risk-Adjusted Profit = Expected Profit - Risk Exposure = ₹${(fin.expected_profit/10000000).toFixed(1)}Cr - ₹${(fin.risk_exposure/10000000).toFixed(1)}Cr = ₹${(fin.risk_adjusted_profit/10000000).toFixed(1)}Cr
+• ROI = (Risk-Adjusted Profit / Total Revenue) × 100 = (${(fin.risk_adjusted_profit/10000000).toFixed(1)}Cr / ${(fin.total_revenue/10000000).toFixed(1)}Cr) × 100 = ${fin.roi_percentage}%`;
+            
+            const financialConclusion = `📈 Conclusion: The risk-adjusted profit of ₹${(fin.risk_adjusted_profit/10000000).toFixed(1)}Cr represents the actual expected profit after accounting for potential losses from ${data.clause_analysis.missing} missing clauses. With an ROI of ${fin.roi_percentage}%, this contract is ${fin.roi_percentage > 20 ? 'moderately profitable' : 'marginally profitable'}. However, the risk exposure of ₹${(fin.risk_exposure/10000000).toFixed(1)}Cr (${fin.roi_percentage < 25 ? 'significant' : 'manageable'}) suggests ${fin.risk_exposure > fin.expected_profit * 0.3 ? 'major renegotiation is needed to protect margins' : 'careful review is recommended before signing'}.`;
+            
+            const complianceScore = data.compliance?.overall_score || 0;
+            let complianceExplanation = "";
+            if (complianceScore === 0) {
+                complianceExplanation = "📋 The compliance score is 0% because the contract contains no keywords related to any of the regulatory standards checked. For DPDP Act, keywords like 'data protection', 'personal data', or 'consent' are missing. For ISO 27001, terms like 'information security' or 'security policy' are not found. This indicates the contract lacks essential compliance provisions required by Indian law. To improve, add specific clauses referencing each standard.";
+            } else if (complianceScore < 40) {
+                complianceExplanation = `📋 The compliance score is ${complianceScore}%, indicating poor compliance. The contract is missing critical regulatory language. To improve, add specific clauses referencing DPDP Act for data protection, ISO 27001 for information security, and include GST invoicing and MSME payment terms.`;
+            } else if (complianceScore < 70) {
+                complianceExplanation = `📋 The compliance score is ${complianceScore}%, showing partial compliance. Some regulatory requirements are addressed but key provisions are missing. Review the specific standards above to identify gaps.`;
+            } else {
+                complianceExplanation = `📋 The compliance score is ${complianceScore}%, indicating good compliance. The contract includes most required regulatory language. Continue to ensure all references are accurate and up-to-date.`;
+            }
+            
+            const missingClauseImportance = "⚠️ Why These Missing Clauses Matter:\n\n• Parties Identification: Ensures correct legal entities are bound - without it, the wrong party may be liable\n• Scope of Work: Defines deliverables and prevents disputes - vague scope leads to endless arguments\n• Payment Terms: Sets clear timelines and interest on delays - prevents cash flow issues\n• Term and Termination: Provides exit rights - without it, you're locked in indefinitely\n• Intellectual Property: Clarifies ownership of created work - critical for protecting your IP\n• Liability and Indemnity: Caps damages and provides third-party protection - without cap, unlimited exposure\n• Data Protection: Ensures DPDP Act compliance - penalties up to ₹250 crore\n• Dispute Resolution: Specifies jurisdiction and arbitration - foreign law increases costs 3-5x\n• Force Majeure: Excuses performance during emergencies - protects during pandemics/natural disasters\n• Warranty: Guarantees quality - without it, no recourse for defects\n• Audit Rights: Allows verification of compliance - prevents billing fraud\n• Insurance: Requires adequate coverage - ensures ability to pay claims";
+            
+            const presentClauseImportance = data.clause_analysis.present_list.length > 0 ? 
+                "✅ Present Clause Analysis:\n\nThe contract contains a Confidentiality clause, which protects trade secrets and sensitive information. This clause prevents the other party from disclosing your confidential information to third parties and typically survives contract termination. It was identified through keyword matching for terms like 'confidential', 'non-disclosure', 'NDA', or 'trade secrets' in the contract text. This is a positive finding that helps protect your competitive advantage." : 
+                "No standard clauses were detected in this contract.";
+            
+            analysisSessionId = 'analysis_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            
+            document.getElementById('analysisResults').innerHTML = `
+                <div class="card"><div class="card-body">
+                    <div class="risk-score" style="--color:${riskColor};--degree:${riskDegree}deg"><div class="risk-score-inner"><div class="risk-number">${risk.score}</div><div>/100</div></div></div>
+                    <div class="text-center mb-3"><span class="risk-badge risk-${risk.level.toLowerCase()}">${risk.level}</span><span class="badge bg-secondary ms-2">${risk.decision}</span></div>
+                    <div class="row mb-3"><div class="col-3 text-center"><small>Legal Risk</small><div class="fw-bold">${risk.legal_risk}</div></div><div class="col-3 text-center"><small>Financial Risk</small><div class="fw-bold">${risk.financial_risk}</div></div><div class="col-3 text-center"><small>Compliance Risk</small><div class="fw-bold">${risk.compliance_risk}</div></div><div class="col-3 text-center"><small>Operational Risk</small><div class="fw-bold">${risk.operational_risk}</div></div></div>
+                    
+                    <div class="summary-box"><i class="fas fa-info-circle me-2"></i> <strong>📋 Executive Summary</strong><p class="mt-2">${data.summary || 'Analysis complete.'}</p><strong>🎯 Final Action Required:</strong><p class="mt-1 text-warning">${data.final_action || 'Review required'}</p>${data.ai_explanation ? `<hr><i class="fas fa-microchip me-2"></i><strong>🤖 AI Insight:</strong><p class="mt-1">${data.ai_explanation}</p>` : ''}</div>
+                </div></div>
+                
+                <div class="card"><div class="card-header">📊 Compliance Assessment</div><div class="card-body">
+                    <div class="mb-3"><div class="d-flex justify-content-between"><span>Overall Compliance Score</span><span class="fw-bold">${data.compliance?.overall_score || 0}%</span></div><div class="progress-bar-custom"><div class="progress-fill" style="width:${data.compliance?.overall_score || 0}%; background:${(data.compliance?.overall_score || 0)>=70?'#2ea043':'#d29922'}"></div></div></div>
+                    ${complianceHtml}
+                    <div class="explanation-box"><i class="fas fa-lightbulb text-warning me-2"></i> <strong>Compliance Assessment Explanation</strong><br>${complianceExplanation}</div>
+                </div></div>
+                
+                <div class="card"><div class="card-header">💰 Financial Impact Analysis</div><div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-3 mb-2"><small>Contract Value</small><div class="fw-bold">₹${(fin.contract_value/10000000).toFixed(1)}Cr</div></div>
+                        <div class="col-md-3 mb-2"><small>Expected Profit</small><div class="fw-bold text-success">₹${(fin.expected_profit/10000000).toFixed(1)}Cr</div></div>
+                        <div class="col-md-3 mb-2"><small>Risk Exposure</small><div class="fw-bold text-danger">₹${(fin.risk_exposure/10000000).toFixed(1)}Cr</div></div>
+                        <div class="col-md-3 mb-2"><small>Risk-Adjusted Profit</small><div class="fw-bold">₹${(fin.risk_adjusted_profit/10000000).toFixed(1)}Cr</div></div>
+                    </div>
+                    <div class="text-center mt-2">📈 ROI: ${fin.roi_percentage}%</div>
+                    <div class="explanation-box"><i class="fas fa-calculator text-info me-2"></i> <strong>Calculation Breakdown</strong><br><pre style="color:#c9d1d9; background:transparent; border:none; font-size:0.85rem;">${financialFormula}</pre></div>
+                    <div class="explanation-box mt-2"><i class="fas fa-chart-line text-info me-2"></i> <strong>Financial Conclusion</strong><br>${financialConclusion}</div>
+                </div></div>
+                
+                <div class="card"><div class="card-header"><i class="fas fa-list-check"></i> Clause Analysis <span class="badge bg-success float-end">${data.clause_analysis.present} present</span><span class="badge bg-danger float-end me-2">${data.clause_analysis.missing} missing</span></div><div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6"><strong class="text-success">✅ Present Clauses</strong>${presentHtml || '<p class="text-muted">None</p>'}</div>
+                        <div class="col-md-6"><strong class="text-danger">❌ Missing Clauses</strong>${missingHtml || '<p class="text-muted">None</p>'}</div>
+                    </div>
+                    <div class="explanation-box mt-3"><i class="fas fa-info-circle text-info me-2"></i> <strong>Why These Clauses Matter</strong><br><pre style="color:#c9d1d9; background:transparent; border:none; font-size:0.85rem; white-space:pre-wrap;">${missingClauseImportance}</pre></div>
+                    <div class="explanation-box mt-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Present Clause Analysis</strong><br>${presentClauseImportance}</div>
+                    <div class="explanation-box mt-2"><i class="fas fa-search text-info me-2"></i> <strong>How Clauses Were Identified</strong><br>Clauses are detected using keyword matching against a library of standard contract clauses. For example, "Confidentiality" is identified by keywords like 'confidential', 'non-disclosure', 'NDA', or 'trade secrets' in the contract text. "Data Protection" is identified by keywords like 'data protection', 'personal data', 'privacy', or 'DPDP'.</div>
+                </div></div>
+                
+                <div class="card"><div class="card-header">💡 Recommendations</div><div class="card-body">${recsHtml}</div></div>
+                
+                <!-- Report Download Button -->
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-download"></i> Download Report</div>
+                    <div class="card-body">
+                        <button class="btn btn-primary w-100" onclick="downloadReport()">
+                            <i class="fas fa-file-word"></i> Download Full Report (DOCX)
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Analysis Chatbot Section -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-comment-dots"></i> 💬 Ask Questions About This Analysis
+                        <small class="text-muted ms-2">Get explanations for risk score, compliance, finances, or any clause</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="analysis-chat-container" id="analysisChatMessages">
+                            <div class="message ai">
+                                <div class="message-bubble">
+                                    🤖 Hi! I'm your analysis assistant. Ask me anything about this contract analysis!<br><br>
+                                    Try asking:<br>
+                                    • "Why is the risk score ${risk.score}/100?"<br>
+                                    • "Explain why Data Protection clause is missing"<br>
+                                    • "How was the ROI calculated?"<br>
+                                    • "What does ${risk.level} risk mean?"<br>
+                                    • "Why is Confidentiality clause important?"<br>
+                                    • "Explain the compliance score of ${complianceScore}%"<br>
+                                    • "Justify the recommendation to ${risk.decision}"
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2 mb-2 flex-wrap">
+                            <span class="suggestion-chip" onclick="sendAnalysisMessage('Why is the risk score ${risk.score}/100?')">❓ Why ${risk.score}/100?</span>
+                            <span class="suggestion-chip" onclick="sendAnalysisMessage('What does ${risk.level} risk mean?')">⚠️ What does ${risk.level} mean?</span>
+                            <span class="suggestion-chip" onclick="sendAnalysisMessage('Why is Data Protection clause important?')">🔒 Data Protection importance</span>
+                            <span class="suggestion-chip" onclick="sendAnalysisMessage('How was the compliance score calculated?')">📊 Compliance calculation</span>
+                            <span class="suggestion-chip" onclick="sendAnalysisMessage('Explain the financial calculation')">💰 Financial breakdown</span>
+                            <span class="suggestion-chip" onclick="sendAnalysisMessage('What should I do next?')">📋 Next steps</span>
+                            <span class="suggestion-chip" onclick="sendAnalysisMessage('hey')">👋 Hey</span>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="analysisChatInput" placeholder="Ask anything about this analysis...">
+                            <button class="btn btn-primary" onclick="sendAnalysisMessage(document.getElementById('analysisChatInput').value)">
+                                <i class="fas fa-paper-plane"></i> Ask
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        async function downloadReport() {
+            if (!currentAnalysis) {
+                alert("No analysis available. Please analyze a contract first.");
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('analysis_data', JSON.stringify(currentAnalysis));
+            
+            try {
+                const res = await fetch(`${API_BASE}/generate-report`, { method: 'POST', body: formData });
+                const result = await res.json();
+                if (result.success) {
+                    window.open(`${API_BASE}/download-report/${result.filename}`, '_blank');
+                } else {
+                    alert('Report generation failed: ' + result.error);
+                }
+            } catch (e) {
+                alert('Error generating report: ' + e.message);
+            }
+        }
+        
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const question = input.value.trim();
+            if (!question) return;
+            
+            const chatDiv = document.getElementById('chatMessages');
+            chatDiv.innerHTML += `<div class="message user"><div class="message-bubble">${escapeHtml(question)}</div></div>`;
+            input.value = '';
+            chatDiv.innerHTML += `<div class="message ai"><div class="message-bubble"><div class="typing-indicator"><span></span><span></span><span></span></div></div></div>`;
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+            
+            try {
+                const formData = new FormData();
+                formData.append('question', question);
+                if (mainSessionId) formData.append('session_id', mainSessionId);
+                
+                const res = await fetch(`${API_BASE}/ai/chat`, { method: 'POST', body: formData });
+                const result = await res.json();
+                chatDiv.removeChild(chatDiv.lastChild);
+                
+                if (result.success) {
+                    chatDiv.innerHTML += `<div class="message ai"><div class="message-bubble">${escapeHtml(result.answer)}</div></div>`;
+                    if (result.session_id) mainSessionId = result.session_id;
+                } else {
+                    chatDiv.innerHTML += `<div class="message ai"><div class="message-bubble text-danger">⚠️ ${escapeHtml(result.error || 'Could not get response')}</div></div>`;
+                }
+                chatDiv.scrollTop = chatDiv.scrollHeight;
+            } catch(e) {
+                chatDiv.removeChild(chatDiv.lastChild);
+                chatDiv.innerHTML += `<div class="message ai"><div class="message-bubble text-danger">⚠️ Connection error. Make sure backend is running.</div></div>`;
+            }
+        }
+        
+        function getRiskClass(score) { 
+            if(score >= 80) return 'risk-critical'; 
+            if(score >= 65) return 'risk-high'; 
+            if(score >= 45) return 'risk-medium'; 
+            if(score >= 25) return 'risk-low'; 
+            return 'risk-minimal'; 
+        }
+        
+        function escapeHtml(text) { 
+            const div = document.createElement('div'); 
+            div.textContent = text; 
+            return div.innerHTML; 
+        }
+        
+        function showError(err) { 
+            document.getElementById('analysisResults').innerHTML = `<div class="card border-danger"><div class="card-body text-center text-danger"><i class="fas fa-exclamation-circle fa-3x"></i><p>${err}</p></div></div>`; 
+        }
+        
+        setInterval(() => { 
+            if(document.getElementById('dashboard').classList.contains('active')) loadDashboard(); 
+        }, 30000);
+    </script>
+</body>
+</html>

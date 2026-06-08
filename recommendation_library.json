@@ -1,0 +1,161 @@
+
+{
+  "recommendations": [
+    {
+      "recommendation_id": "REC001",
+      "risk_pattern": "Unlimited Liability",
+      "priority": "Critical",
+      "recommendation": "Add liability cap limiting to fees paid in preceding 12 months or a fixed monetary amount.",
+      "sample_clause": "The aggregate liability of either party arising out of or relating to this Agreement shall not exceed the total fees paid or payable by Customer to Vendor during the 12 months immediately preceding the claim.",
+      "negotiation_tips": [
+        "Start with offer of fees paid cap",
+        "Alternative: fixed monetary amount (e.g., Rs. 10 lakhs)",
+        "Exclude breach of confidentiality and IP infringement from cap"
+      ],
+      "applicable_contracts": ["All Contract Types"]
+    },
+    {
+      "recommendation_id": "REC002",
+      "risk_pattern": "MSME Delayed Payment Violation",
+      "priority": "Critical",
+      "recommendation": "Change payment terms to 30 days or less from date of acceptance/invoice to avoid MSMED penalties.",
+      "sample_clause": "Vendor shall invoice upon delivery. Payment shall be made within 30 days of receipt of correct invoice.",
+      "negotiation_tips": [
+        "Do not accept payment terms exceeding 45 days",
+        "Ensure payment period measured from invoice acceptance date",
+        "Consider offering early payment discount for 15-day terms"
+      ],
+      "applicable_contracts": ["Procurement", "Vendor Contract", "Supply Agreement"]
+    },
+    {
+      "recommendation_id": "REC003",
+      "risk_pattern": "No Data Protection Compliance",
+      "priority": "Critical",
+      "recommendation": "Add comprehensive data protection clause with breach notification, security measures, and data processing restrictions.",
+      "sample_clause": "Processor shall implement security measures as per ISO 27001. Data breaches shall be notified within 48 hours. Sub-processing requires prior written consent. Data shall be processed only on documented instructions.",
+      "negotiation_tips": [
+        "Insist on 24-48 hour breach notification",
+        "Require flow-down of obligations to sub-processors",
+        "Include data deletion obligations on termination"
+      ],
+      "applicable_contracts": ["Service Agreement", "Vendor Contract", "SaaS Agreement", "Outsourcing", "Cloud Services"]
+    },
+    {
+      "recommendation_id": "REC004",
+      "risk_pattern": "No TDS Compliance Clause",
+      "priority": "High",
+      "recommendation": "Add clause requiring TDS deduction as per applicable rates and issuance of TDS certificate.",
+      "sample_clause": "Customer shall deduct tax at source as required under Income Tax Act, 1961. Vendor shall provide its PAN and cooperate in obtaining lower TDS certificates. Customer shall provide TDS certificate within 15 days of deduction.",
+      "negotiation_tips": [
+        "Specify TDS rates applicable (e.g., 2% for works contract, 10% for fees)",
+        "Require vendor to provide PAN",
+        "Include provision for lower TDS certificate applications"
+      ],
+      "applicable_contracts": ["Service Agreement", "Vendor Contract", "Professional Services", "Works Contract"]
+    },
+    {
+      "recommendation_id": "REC005",
+      "risk_pattern": "Foreign Governing Law",
+      "priority": "High",
+      "recommendation": "Change governing law to India with arbitration in an Indian city.",
+      "sample_clause": "This Agreement shall be governed by laws of India. Any dispute shall be resolved by arbitration in New Delhi in accordance with the Arbitration and Conciliation Act 1996.",
+      "negotiation_tips": [
+        "Indian governing law is strongly preferred",
+        "Alternative: neutral law (e.g., Singapore) with Indian arbitration",
+        "Ensure arbitration venue is convenient"
+      ],
+      "applicable_contracts": ["All Contract Types with foreign counterparties"]
+    },
+    {
+      "recommendation_id": "REC006",
+      "risk_pattern": "Unlimited Indemnity",
+      "priority": "High",
+      "recommendation": "Cap indemnity obligation at fees paid or fixed amount, limit to third party claims, add procedural requirements.",
+      "sample_clause": "Vendor's indemnity obligation for IP infringement shall be limited to direct damages and capped at fees paid in preceding 12 months, provided Customer promptly notifies Vendor and grants control of defense.",
+      "negotiation_tips": [
+        "Add cap to indemnity",
+        "Require prompt notice for indemnity claims",
+        "Mutual indemnity preferred over one-way"
+      ],
+      "applicable_contracts": ["Service Agreement", "Software License", "Vendor Contract"]
+    },
+    {
+      "recommendation_id": "REC007",
+      "risk_pattern": "No IP Ownership for Custom Work",
+      "priority": "Critical",
+      "recommendation": "Add clause assigning all deliverables and IP created for Customer to Customer.",
+      "sample_clause": "All deliverables, works of authorship, inventions, and intellectual property created specifically for Customer under this Agreement shall be works made for hire owned by Customer. Vendor hereby assigns all rights therein and shall assist in perfecting Customer's ownership.",
+      "negotiation_tips": [
+        "Define 'deliverables' clearly",
+        "Distinguish from vendor's pre-existing IP (background IP)",
+        "Grant license for background IP to enable use of deliverables"
+      ],
+      "applicable_contracts": ["Software Development", "Professional Services", "Consulting", "Work for Hire"]
+    },
+    {
+      "recommendation_id": "REC008",
+      "risk_pattern": "No Audit Rights",
+      "priority": "Medium",
+      "recommendation": "Add annual audit right at customer's expense, with more frequent audits if issues found.",
+      "sample_clause": "Customer may audit Vendor's compliance with this Agreement annually upon 30 days written notice. If audit discloses material non-compliance, Vendor shall bear audit costs.",
+      "negotiation_tips": [
+        "Specify audit scope and frequency",
+        "Include right to engage third-party auditor",
+        "Add cost-shifting if violations found"
+      ],
+      "applicable_contracts": ["Service Agreement", "Outsourcing", "Vendor Contract", "SaaS"]
+    },
+    {
+      "recommendation_id": "REC009",
+      "risk_pattern": "No SLA Service Credits",
+      "priority": "Medium",
+      "recommendation": "Add SLA with service credits for downtime or missed performance targets.",
+      "sample_clause": "Service credits of 5% of monthly fees for each hour of downtime beyond 99.9% uptime. Credits applied to next invoice.",
+      "negotiation_tips": [
+        "Define uptime calculation methodology",
+        "Include exclusion for planned maintenance with notice",
+        "Cap service credits at 50% of monthly fees"
+      ],
+      "applicable_contracts": ["Service Agreement", "IT Support", "Cloud Services", "Hosting", "SaaS"]
+    },
+    {
+      "recommendation_id": "REC010",
+      "risk_pattern": "No Warranty / As Is",
+      "priority": "Medium",
+      "recommendation": "Add limited warranty for a reasonable period that software/services conform to specifications.",
+      "sample_clause": "Vendor warrants that for 90 days from delivery, the Services/Software will conform to the specifications in all material respects. Defective items shall be repaired or replaced at Vendor's cost.",
+      "negotiation_tips": [
+        "30-90 day warranty period is standard",
+        "Remedies: repair, replace, or refund",
+        "Exclude customer-caused defects"
+      ],
+      "applicable_contracts": ["Software License", "Equipment Procurement", "Service Agreement"]
+    },
+    {
+      "recommendation_id": "REC011",
+      "risk_pattern": "Automatic Renewal with Short Notice",
+      "priority": "Medium",
+      "recommendation": "Change to explicit renewal with 60+ days notice, or remove auto-renewal entirely.",
+      "sample_clause": "This Agreement may be renewed for successive 1-year terms only by mutual written agreement executed at least 60 days before expiry.",
+      "negotiation_tips": [
+        "Increase notice period to 60-90 days",
+        "Add requirement for written renewal agreement",
+        "Alternatively, make auto-renewal opt-in"
+      ],
+      "applicable_contracts": ["Service Agreements", "Software License", "Lease Agreements", "Maintenance Contracts"]
+    },
+    {
+      "recommendation_id": "REC012",
+      "risk_pattern": "Assignment without Consent",
+      "priority": "Medium",
+      "recommendation": "Add exception for assignment to affiliates or in acquisition without consent.",
+      "sample_clause": "Either party may assign this Agreement to an affiliate or to a successor in a merger, acquisition, or sale of substantially all assets without consent, with written notice to the other party.",
+      "negotiation_tips": [
+        "Include affiliate assignment without consent",
+        "Add M&A exception",
+        "Require written notice for assignment"
+      ],
+      "applicable_contracts": ["All Contract Types"]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+
+{
+  "laws": [
+    {
+      "law_id": "DPDP_2023",
+      "law_name": "Digital Personal Data Protection Act 2023",
+      "category": "Data Privacy",
+      "country": "India",
+      "mandatory_clauses": [
+        "data_consent",
+        "data_retention",
+        "breach_notification",
+        "cross_border_transfer",
+        "data_principle_rights",
+        "grievance_redressal"
+      ],
+      "risk_weight": 10,
+      "penalty": {
+        "amount": "250 Crore",
+        "description": "Maximum penalty for failure to take security measures",
+        "small_penalty": "10000 INR for furnishing false particulars"
+      },
+      "compliance_checks": [
+        {
+          "check_id": "DPDP001",
+          "requirement": "Consent Management - lawful, fair, transparent data processing",
+          "keywords": ["consent", "data fiduciary", "opt-in", "opt-out"]
+        },
+        {
+          "check_id": "DPDP002",
+          "requirement": "Data Breach Notification to Board and affected victims",
+          "keywords": ["breach notification", "data breach", "security incident"]
+        },
+        {
+          "check_id": "DPDP003",
+          "requirement": "Data Retention - cannot store perpetually",
+          "keywords": ["retention", "storage limit", "erase data", "deletion"]
+        },
+        {
+          "check_id": "DPDP004",
+          "requirement": "Cross-border data transfer restrictions",
+          "keywords": ["cross-border", "international transfer", "data transfer"]
+        }
+      ]
+    },
+    {
+      "law_id": "MSMED_2006",
+      "law_name": "Micro, Small and Medium Enterprises Development Act 2006",
+      "category": "Supplier Protection",
+      "country": "India",
+      "mandatory_clauses": [
+        "delayed_payment_interest",
+        "payment_within_45_days",
+        "compound_interest"
+      ],
+      "risk_weight": 8,
+      "penalty": {
+        "amount": "Three times bank rate + compound interest",
+        "description": "Interest payable on delayed payments to MSME suppliers"
+      },
+      "compliance_checks": [
+        {
+          "check_id": "MSMED001",
+          "requirement": "Payment must be made within 45 days of acceptance",
+          "keywords": ["45 days", "payment period", "due date", "acceptance"]
+        },
+        {
+          "check_id": "MSMED002",
+          "requirement": "Compound interest with monthly rests on delayed payment",
+          "keywords": ["compound interest", "monthly rests", "bank rate", "three times"]
+        },
+        {
+          "check_id": "MSMED003",
+          "requirement": "Disclosure in annual statement of accounts",
+          "keywords": ["annual statement", "unpaid amount", "interest due", "accounting year"]
+        },
+        {
+          "check_id": "MSMED004",
+          "requirement": "Interest not deductible under Income Tax Act",
+          "keywords": ["disallowance", "not allowed as deduction", "income tax"]
+        }
+      ]
+    },
+    {
+      "law_id": "INCOME_TAX_2025",
+      "law_name": "Income Tax Act 2025",
+      "category": "Taxation",
+      "country": "India",
+      "mandatory_clauses": [
+        "tds_deduction",
+        "tax_withholding",
+        "tan_quotation"
+      ],
+      "risk_weight": 9,
+      "penalty": {
+        "description": "Interest at 1% or 1.5% per month, late fee of Rs. 200/day, imprisonment up to 7 years"
+      },
+      "compliance_checks": [
+        {
+          "check_id": "TAX001",
+          "requirement": "TDS deduction at applicable rates",
+          "keywords": ["tax deduction", "tds", "withholding", "section 194", "section 193"]
+        },
+        {
+          "check_id": "TAX002",
+          "requirement": "TAN requirement for deductors",
+          "keywords": ["tan", "tax deduction account number", "tax collection account number"]
+        },
+        {
+          "check_id": "TAX003",
+          "requirement": "Form 16/16A issuance",
+          "keywords": ["form 16", "tds certificate", "tax certificate"]
+        }
+      ]
+    },
+    {
+      "law_id": "CGST_2017",
+      "law_name": "Central Goods and Services Tax Act 2017",
+      "category": "Indirect Tax",
+      "country": "India",
+      "mandatory_clauses": [
+        "gst_registration",
+        "tax_invoice",
+        "input_tax_credit",
+        "reverse_charge"
+      ],
+      "risk_weight": 8,
+      "compliance_checks": [
+        {
+          "check_id": "GST001",
+          "requirement": "GST registration for aggregate turnover > threshold",
+          "keywords": ["gst registration", "aggregate turnover", "threshold limit"]
+        },
+        {
+          "check_id": "GST002",
+          "requirement": "Proper tax invoice with required particulars",
+          "keywords": ["tax invoice", "gst invoice", "invoice number", "gstin"]
+        },
+        {
+          "check_id": "GST003",
+          "requirement": "E-way bill for goods movement > Rs. 50,000",
+          "keywords": ["e-way bill", "movement of goods", "transport", "consignment"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+
+{
+  "terms": [
+    {
+      "term": "Indemnity",
+      "definition": "A contractual obligation where one party agrees to compensate the other for specified losses or damages arising from third party claims.",
+      "example": "Vendor indemnifies Customer against claims of IP infringement.",
+      "related_terms": ["Liability", "Damages", "Hold Harmless", "Defend"],
+      "legal_effect": "Creates obligation to pay legal costs and settlement/judgment amounts"
+    },
+    {
+      "term": "Force Majeure",
+      "definition": "Events beyond reasonable control that prevent a party from performing contractual obligations.",
+      "example": "Natural disasters, war, terrorism, epidemics, government actions.",
+      "related_terms": ["Act of God", "Unforeseeable", "Impracticability"],
+      "legal_effect": "Excuses non-performance during event duration"
+    },
+    {
+      "term": "Limitation of Liability",
+      "definition": "A clause that caps or restricts the amount of damages a party can recover.",
+      "example": "Liability capped at fees paid in preceding 12 months.",
+      "related_terms": ["Liability Cap", "Damages Cap", "Exclusion of Consequential Damages"],
+      "legal_effect": "Limits financial exposure"
+    },
+    {
+      "term": "Consequential Damages",
+      "definition": "Indirect damages that do not flow directly from breach, such as lost profits or business interruption.",
+      "example": "Lost revenue due to software downtime.",
+      "related_terms": ["Indirect Damages", "Special Damages", "Incidental Damages"],
+      "legal_effect": "Often excluded in commercial contracts"
+    },
+    {
+      "term": "TDS - Tax Deducted at Source",
+      "definition": "Tax withheld by payer from payments to deductee and remitted to government.",
+      "example": "2% TDS on works contract payments.",
+      "related_terms": ["Withholding Tax", "TAN", "Form 16", "Form 26Q"],
+      "legal_effect": "Statutory obligation; failure results in disallowance and penalties"
+    },
+    {
+      "term": "TAN - Tax Deduction and Collection Account Number",
+      "definition": "Unique 10-digit alphanumeric number required for persons deducting or collecting tax.",
+      "example": "DELR12345F",
+      "related_terms": ["TDS", "PAN"],
+      "legal_effect": "Mandatory for all deductors; penalty for non-compliance"
+    },
+    {
+      "term": "MSME - Micro, Small and Medium Enterprises",
+      "definition": "Enterprises classified based on investment in plant and machinery or equipment.",
+      "example": "Micro: < Rs. 25 lakhs (manufacturing). Small: < Rs. 5 crores.",
+      "related_terms": ["MSMED Act 2006", "Udyam Registration"],
+      "legal_effect": "Special protections including mandatory 45-day payment terms and compound interest on delays"
+    },
+    {
+      "term": "GST - Goods and Services Tax",
+      "definition": "Comprehensive indirect tax on supply of goods and services in India.",
+      "example": "CGST + SGST for intra-state supply, IGST for inter-state.",
+      "related_terms": ["CGST", "SGST", "IGST", "Input Tax Credit", "E-way Bill"],
+      "legal_effect": "Compliance required for registration, invoicing, filing returns"
+    },
+    {
+      "term": "Warranty",
+      "definition": "A promise by the seller about the quality, condition, or performance of goods or services.",
+      "example": "Software will conform to documentation for 90 days.",
+      "related_terms": ["Representation", "Guarantee", "Breach of Warranty"],
+      "legal_effect": "Creates remedy for non-conformance"
+    },
+    {
+      "term": "SLA - Service Level Agreement",
+      "definition": "Commitments regarding service performance metrics and remedies for failure.",
+      "example": "99.9% uptime, 4-hour response time.",
+      "related_terms": ["Service Credits", "Uptime", "Response Time", "Resolution Time"],
+      "legal_effect": "Quantifiable performance standards with remedies"
+    },
+    {
+      "term": "Escrow - Source Code Escrow",
+      "definition": "Arrangement where source code is deposited with third party and released upon specified events.",
+      "example": "Release upon vendor bankruptcy or failure to maintain software.",
+      "related_terms": ["Escrow Agent", "Release Conditions", "Deposit Verification"],
+      "legal_effect": "Provides customer self-help remedy if vendor fails to maintain software"
+    },
+    {
+      "term": "DPDP Act 2023 - Digital Personal Data Protection Act 2023",
+      "definition": "India's comprehensive data protection law regulating processing of personal data.",
+      "example": "Requires consent, breach notification, data retention limits.",
+      "related_terms": ["Data Fiduciary", "Data Principal", "Consent Manager", "Data Protection Board"],
+      "legal_effect": "Penalties up to Rs. 250 Crore, mandatory compliance obligations"
+    },
+    {
+      "term": "Reverse Charge",
+      "definition": "Mechanism where recipient of goods/services is liable to pay GST instead of supplier.",
+      "example": "Goods Transport Agency services, legal services by advocate.",
+      "related_terms": ["GST", "Input Tax Credit", "RCM"],
+      "legal_effect": "Recipient must pay GST directly to government"
+    },
+    {
+      "term": "Input Tax Credit - ITC",
+      "definition": "Credit for GST paid on inputs, available to set off against output GST liability.",
+      "example": "Manufacturer claims ITC on raw materials against GST on finished goods.",
+      "related_terms": ["CGST", "SGST", "IGST", "Reverse Charge"],
+      "legal_effect": "Reduces effective tax burden; conditions apply for eligibility"
+    },
+    {
+      "term": "PAN - Permanent Account Number",
+      "definition": "10-digit alphanumeric identifier for all tax-related transactions.",
+      "example": "AAAPL1234C",
+      "related_terms": ["TAN", "TDS", "Income Tax"],
+      "legal_effect": "Mandatory for financial transactions over specified thresholds"
+    },
+    {
+      "term": "Work Made for Hire",
+      "definition": "Legal doctrine where employer or hiring party is considered author/owner of created work.",
+      "example": "Software developed by consultant for company as work for hire.",
+      "related_terms": ["Copyright", "Assignment", "Deliverables", "Background IP"],
+      "legal_effect": "Hiring party owns IP automatically; no separate assignment needed"
+    },
+    {
+      "term": "Background IP",
+      "definition": "Intellectual property owned by a party before entering into an agreement.",
+      "example": "Vendor's pre-existing software libraries used in development.",
+      "related_terms": ["Foreground IP", "Deliverables", "License Grant"],
+      "legal_effect": "Remains owned by original party; license granted to other party"
+    },
+    {
+      "term": "Foreground IP",
+      "definition": "Intellectual property created specifically under an agreement.",
+      "example": "Custom software developed for customer.",
+      "related_terms": ["Background IP", "Deliverables", "Work Made for Hire"],
+      "legal_effect": "Ownership determined by agreement (often customer)"
+    },
+    {
+      "term": "Liquidated Damages",
+      "definition": "Pre-determined damages amount for specified breach, agreed by parties.",
+      "example": "Rs. 10,000 per day for delay beyond completion date.",
+      "related_terms": ["Penalty", "Delay Damages", "Compensation"],
+      "legal_effect": "Enforceable if reasonable estimate, not penalty"
+    },
+    {
+      "term": "Breach of Contract",
+      "definition": "Failure to perform any contractual obligation without legal excuse.",
+      "example": "Non-payment, failure to deliver, defective performance.",
+      "related_terms": ["Material Breach", "Anticipatory Breach", "Cure Period"],
+      "legal_effect": "Non-breaching party entitled to remedies"
+    },
+    {
+      "term": "Cure Period",
+      "definition": "Time allowed to remedy a contractual breach before termination or other action.",
+      "example": "30 days to cure payment default.",
+      "related_terms": ["Notice of Default", "Opportunity to Cure"],
+      "legal_effect": "Prevents immediate termination for curable breaches"
+    },
+    {
+      "term": "Sub-processor",
+      "definition": "Third party engaged by data processor to process personal data.",
+      "example": "Cloud hosting provider engaged by SaaS vendor.",
+      "related_terms": ["Data Processor", "Data Fiduciary", "Data Protection"],
+      "legal_effect": "Requires written consent and flow-down of data protection obligations"
+    }
+  ]
+}
