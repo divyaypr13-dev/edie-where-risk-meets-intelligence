@@ -2,7 +2,7 @@
 
 ## AI-Powered Contract Risk, Compliance & Profitability Intelligence Platform
 
-### Unisys Innovation Program Submission | June 2026
+
 
 ---
 
@@ -492,11 +492,9 @@ Profit Impact	Significant (24% reduction)
 ### 👥 Submission Information
 Field	Value
 Project	EDIE - Enterprise Decision Intelligence Engine
-Program	Unisys Innovation Program (UIP)
-Date	June 2026
-Version	5.0
+
 Repository (https://github.com/UnisysUIP/2026-EDIE-An-Explainable-Decision-Intelligence-Engine-for-Enterprise-Documents)
-Key Differentiators for Judges
+
 Contract-Type Intelligence - Not a generic analyzer; understands different contract types
 ####
 Explainable AI - Every decision has a traceable reasoning chain
