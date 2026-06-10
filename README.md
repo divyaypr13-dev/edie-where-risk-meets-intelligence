@@ -489,12 +489,6 @@ Missing Clauses	Liability Cap, Data Protection, SLA, Warranty
 Key Risks	Unlimited Liability, Missing DPDP, AS IS Warranty
 Profit Impact	Significant (24% reduction)
 
-### 👥 Submission Information
-Field	Value
-Project	EDIE - Enterprise Decision Intelligence Engine
-
-Repository (https://github.com/UnisysUIP/2026-EDIE-An-Explainable-Decision-Intelligence-Engine-for-Enterprise-Documents)
-
 Contract-Type Intelligence - Not a generic analyzer; understands different contract types
 ####
 Explainable AI - Every decision has a traceable reasoning chain
